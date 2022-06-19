@@ -25,6 +25,14 @@ packer.startup(function()
     end,
   })
 
+  use({
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function()
+      require('plugins/configs/null-ls')
+    end,
+    requires = { 'nvim-lua/plenary.nvim' },
+  })
+
   -- use({
   --   'EdenEast/nightfox.nvim',
   --   config = function()
