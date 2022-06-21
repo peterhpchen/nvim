@@ -33,32 +33,34 @@ packer.startup(function()
     requires = { 'nvim-lua/plenary.nvim' },
   })
 
-  -- use({
-  --   'EdenEast/nightfox.nvim',
-  --   config = function()
-  --     vim.cmd('silent! colorscheme nordfox')
-  --   end,
-  -- })
-  --
-  -- use('kyazdani42/nvim-web-devicons')
-  --
+  use({
+    'EdenEast/nightfox.nvim',
+    config = function()
+      vim.cmd('silent! colorscheme nordfox')
+    end,
+  })
+
+  use('kyazdani42/nvim-web-devicons')
+
   use({
     'kyazdani42/nvim-tree.lua',
     config = function()
       require('plugins/configs/nvim-tree')
     end,
   })
-  -- use({
-  --   'nvim-lualine/lualine.nvim',
-  --   config = function()
-  --     require('plugins/configs/lualine')
-  --   end,
-  -- })
-  -- use({
-  --   'akinsho/bufferline.nvim',
-  --   tag = 'v2.*',
-  --   config = function()
-  --     require('plugins/configs/bufferline')
-  --   end,
-  -- })
+
+  use({
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require('plugins/configs/lualine')
+    end,
+  })
+
+  use({
+    'akinsho/bufferline.nvim',
+    tag = 'v2.*',
+    config = function()
+      require('plugins/configs/bufferline')
+    end,
+  })
 end)
