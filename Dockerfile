@@ -25,7 +25,7 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | b
 RUN source /root/.bashrc && nvm install $NODE_VERSION
 ENV PATH $XDG_CONFIG_HOME/nvm/versions/node/v$NODE_VERSION/bin:$PATH
 
-RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm hadolint-bin'
+RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm hadolint-bin=2.10.0-1'
 
 RUN pacman -S --noconfirm neovim=0.7.0-3
 COPY /nvim /root/.config/nvim
