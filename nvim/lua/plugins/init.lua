@@ -63,4 +63,11 @@ packer.startup(function()
       require('plugins/configs/bufferline')
     end,
   })
+
+  use({
+    'numToStr/Comment.nvim',
+    config = function()
+      require('plugins/configs/comment')
+    end,
+  })
 end)
