@@ -24,8 +24,14 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | b
 RUN source /root/.bashrc && nvm install $NODE_VERSION
 ENV PATH $XDG_CONFIG_HOME/nvm/versions/node/v$NODE_VERSION/bin:$PATH
 
+# Dockerfile
 RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm hadolint-bin=2.10.0-1'
 
+# Lua
+RUN pacman -S --noconfirm stylua=0.13.1-1
+COPY /xdg-config-home $XDG_CONFIG_HOME
+
+# Neovim
 RUN pacman -S --noconfirm neovim=0.7.0-3
 COPY /nvim /root/.config/nvim
 RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm nvim-packer-git=r498.00ec5ad-1'
