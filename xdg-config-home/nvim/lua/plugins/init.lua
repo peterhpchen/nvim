@@ -32,6 +32,14 @@ packer.startup(function(use)
     end,
     requires = { 'nvim-lua/plenary.nvim' },
   })
+  use({
+    'glepnir/lspsaga.nvim',
+    after = 'nvim-lspconfig',
+    branch = 'features', -- reset to main until merged
+    config = function()
+      require('plugins/configs/lspsaga')
+    end,
+  })
 
   -- completion and snippet
   use('rafamadriz/friendly-snippets')
