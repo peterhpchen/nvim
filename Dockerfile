@@ -28,7 +28,7 @@ RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm hadolint-bin=2.10.0-1'
 
 RUN pacman -S --noconfirm neovim=0.7.0-3
 COPY /nvim /root/.config/nvim
-RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm nvim-packer-git=r498.00ec5ad-1'
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 RUN nvim --headless -c 'TSInstallSync lua dockerfile' -c 'q'
 RUN nvim --headless -c 'LspInstall --sync sumneko_lua dockerls' -c 'q'
