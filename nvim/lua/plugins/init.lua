@@ -67,6 +67,14 @@ packer.startup(function()
 
   use('kyazdani42/nvim-web-devicons')
 
+  -- start page
+  use({
+    'goolord/alpha-nvim',
+    config = function()
+      require('plugins/configs/alpha')
+    end,
+  })
+
   -- sidebar
   use({
     'kyazdani42/nvim-tree.lua',
@@ -116,10 +124,11 @@ packer.startup(function()
     end,
   })
 
+  -- key binding sheet
   use({
-    'goolord/alpha-nvim',
+    'folke/which-key.nvim',
     config = function()
-      require('plugins/configs/alpha')
+      require('plugins/configs/which-key')
     end,
   })
 end)
