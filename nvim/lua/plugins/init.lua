@@ -4,7 +4,7 @@ if not present then
   return
 end
 
-packer.startup(function()
+packer.startup(function(use)
   use('wbthomason/packer.nvim')
 
   use({
