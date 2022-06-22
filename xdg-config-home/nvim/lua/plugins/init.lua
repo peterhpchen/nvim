@@ -139,4 +139,12 @@ packer.startup(function(use)
       require('plugins/configs/which-key')
     end,
   })
+
+  use({
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require('plugins/configs/trouble')
+    end,
+  })
 end)
