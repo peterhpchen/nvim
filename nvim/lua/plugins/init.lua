@@ -115,4 +115,11 @@ packer.startup(function()
       require('plugins/configs/gitsigns')
     end,
   })
+
+  use({
+    'goolord/alpha-nvim',
+    config = function()
+      require('plugins/configs/alpha')
+    end,
+  })
 end)
