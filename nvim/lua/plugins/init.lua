@@ -49,6 +49,14 @@ packer.startup(function()
   use({ 'hrsh7th/cmp-nvim-lua', after = 'cmp-buffer' })
   use({ 'hrsh7th/cmp-path', after = 'cmp-nvim-lua' })
 
+  use({
+    'windwp/nvim-autopairs',
+    after = 'nvim-cmp',
+    config = function()
+      require('plugins/configs/autopairs')
+    end,
+  })
+
   -- theme
   use({
     'EdenEast/nightfox.nvim',
@@ -100,6 +108,7 @@ packer.startup(function()
     requires = { 'nvim-lua/plenary.nvim' },
   })
 
+  -- git
   use({
     'lewis6991/gitsigns.nvim',
     config = function()
