@@ -19,6 +19,8 @@ RUN pacman -S --noconfirm git=2.36.1-1
 
 #RUN apk add --no-cache rlwrap https://cht.sh/:cht.sh | tee /usr/local/bin/cht.sh && chmod +x /usr/local/bin/cht.sh
 
+COPY /xdg-config-home $XDG_CONFIG_HOME
+
 COPY /bash/.bashrc /root/.bashrc
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 RUN source /root/.bashrc && nvm install $NODE_VERSION
@@ -29,11 +31,9 @@ RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm hadolint-bin=2.10.0-1'
 
 # Lua
 RUN pacman -S --noconfirm stylua=0.13.1-1
-COPY /xdg-config-home $XDG_CONFIG_HOME
 
 # Neovim
 RUN pacman -S --noconfirm neovim=0.7.0-3
-COPY /nvim /root/.config/nvim
 RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm nvim-packer-git=r498.00ec5ad-1'
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 RUN nvim --headless -c 'TSInstallSync lua dockerfile' -c 'q'
