@@ -11,8 +11,7 @@ RUN yay -Sy
 # RUN apk add --no-cache zsh
 
 
-RUN pacman -S --noconfirm unzip=6.0-18
-# RUN apk add --no-cache build-base curl
+RUN pacman -S --noconfirm unzip=6.0-18 ripgrep=13.0.0-2 fd=8.4.0-1
 
 RUN pacman -S --noconfirm git=2.36.1-1
 

@@ -15,6 +15,7 @@ packer.startup(function()
     end,
   })
 
+  -- LSP
   use('williamboman/nvim-lsp-installer')
   use({
     'neovim/nvim-lspconfig',
@@ -24,7 +25,6 @@ packer.startup(function()
       require('plugins/configs/lspconfig')
     end,
   })
-
   use({
     'jose-elias-alvarez/null-ls.nvim',
     config = function()
@@ -33,6 +33,7 @@ packer.startup(function()
     requires = { 'nvim-lua/plenary.nvim' },
   })
 
+  -- completion and snippet
   use('rafamadriz/friendly-snippets')
   use({
     'hrsh7th/nvim-cmp',
@@ -48,6 +49,7 @@ packer.startup(function()
   use({ 'hrsh7th/cmp-nvim-lua', after = 'cmp-buffer' })
   use({ 'hrsh7th/cmp-path', after = 'cmp-nvim-lua' })
 
+  -- theme
   use({
     'EdenEast/nightfox.nvim',
     config = function()
@@ -57,6 +59,7 @@ packer.startup(function()
 
   use('kyazdani42/nvim-web-devicons')
 
+  -- sidebar
   use({
     'kyazdani42/nvim-tree.lua',
     config = function()
@@ -64,6 +67,7 @@ packer.startup(function()
     end,
   })
 
+  -- status bar
   use({
     'nvim-lualine/lualine.nvim',
     config = function()
@@ -71,6 +75,7 @@ packer.startup(function()
     end,
   })
 
+  -- tab bar
   use({
     'akinsho/bufferline.nvim',
     tag = 'v2.*',
@@ -84,5 +89,14 @@ packer.startup(function()
     config = function()
       require('plugins/configs/comment')
     end,
+  })
+
+  -- finder
+  use({
+    'nvim-telescope/telescope.nvim',
+    config = function()
+      require('plugins/configs/telescope')
+    end,
+    requires = { 'nvim-lua/plenary.nvim' },
   })
 end)
