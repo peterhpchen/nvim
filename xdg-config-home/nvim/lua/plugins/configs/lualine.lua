@@ -5,5 +5,5 @@ if not present then
 end
 
 lualine.setup({
-  options = { theme = 'tokyonight' },
+  options = { theme = 'auto' },
 })
