@@ -67,9 +67,9 @@ packer.startup(function(use)
 
   -- theme
   use({
-    'EdenEast/nightfox.nvim',
+    'folke/tokyonight.nvim',
     config = function()
-      vim.cmd('silent! colorscheme nordfox')
+      require('plugins/configs/tokyonight')
     end,
   })
 
