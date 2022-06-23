@@ -40,4 +40,5 @@ RUN nvim --headless -c 'TSInstallSync lua dockerfile' -c 'q'
 RUN nvim --headless -c 'LspInstall --sync sumneko_lua dockerls' -c 'q'
 
 WORKDIR /root/workspace
-ENTRYPOINT nvim
+ENTRYPOINT ["/bin/bash"]
+# CMD ["nvim"]
