@@ -37,7 +37,7 @@ RUN pacman -S --noconfirm neovim=0.7.0-3
 RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm nvim-packer-git=r498.00ec5ad-1'
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 RUN nvim --headless -c 'TSInstallSync lua dockerfile' -c 'q'
-RUN nvim --headless -c 'LspInstall --sync sumneko_lua dockerls' -c 'q'
+RUN nvim --headless -c 'LspInstall --sync sumneko_lua dockerls volar' -c 'q'
 
 WORKDIR /root/workspace
 ENTRYPOINT ["/bin/bash"]

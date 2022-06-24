@@ -15,3 +15,5 @@ lspconfig.sumneko_lua.setup({
 })
 
 lspconfig.dockerls.setup({})
+
+lspconfig.volar.setup({})

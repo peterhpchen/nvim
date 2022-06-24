@@ -18,6 +18,8 @@ vim.opt.smartindent = true
 
 vim.opt.showmode = false
 
+vim.opt.clipboard = 'unnamedplus'
+
 -- diagnostic
 vim.diagnostic.config({ severity_sort = true })
 local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
