@@ -5,5 +5,9 @@ if not present then
 end
 
 lualine.setup({
-  options = { theme = 'auto' },
+  options = {
+    theme = 'auto',
+    disabled_filetypes = { 'NvimTree', 'alpha' },
+    globalstatus = true,
+  },
 })
