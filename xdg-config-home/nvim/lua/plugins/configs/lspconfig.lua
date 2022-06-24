@@ -4,6 +4,7 @@ if not present then
   return
 end
 
+-- Lua
 lspconfig.sumneko_lua.setup({
   settings = {
     Lua = {
@@ -14,6 +15,11 @@ lspconfig.sumneko_lua.setup({
   },
 })
 
+-- Dockerfile
 lspconfig.dockerls.setup({})
 
+-- Vue
 lspconfig.volar.setup({})
+
+-- Shell
+lspconfig.bashls.setup({})
