@@ -67,8 +67,9 @@ packer.startup(function(use)
 
   -- theme
   use({
-    -- 'folke/tokyonight.nvim',
     'rebelot/kanagawa.nvim',
+    -- 'folke/tokyonight.nvim',
+    -- 'EdenEast/nightfox.nvim',
     config = function()
       vim.cmd('silent! colorscheme kanagawa')
     end,

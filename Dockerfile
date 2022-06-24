@@ -1,4 +1,4 @@
-FROM greyltc/archlinux-aur:yay-20220612.0.220
+FROM greyltc/archlinux-aur:yay-20220619.0.221
 
 ARG NODE_VERSION="16.15.1"
 
