@@ -1,4 +1,4 @@
-FROM greyltc/archlinux-aur:yay-20220619.0.221
+FROM greyltc/archlinux-aur:yay
 
 ARG NODE_VERSION="16.15.1"
 
@@ -11,9 +11,9 @@ RUN yay -Sy
 # RUN apk add --no-cache zsh
 
 
-RUN pacman -S --noconfirm unzip=6.0-18 ripgrep=13.0.0-2 fd=8.4.0-1
+RUN pacman -S --noconfirm --quiet unzip ripgrep fd
 
-RUN pacman -S --noconfirm git=2.36.1-1
+RUN pacman -S --noconfirm --quiet git
 
 #RUN apk add --no-cache mandoc man-pages
 
@@ -21,27 +21,34 @@ RUN pacman -S --noconfirm git=2.36.1-1
 
 COPY /xdg-config-home $XDG_CONFIG_HOME
 
-COPY /bash/.bashrc /root/.bashrc
+RUN touch /root/.bashrc
+
+# Node
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 RUN source /root/.bashrc && nvm install $NODE_VERSION
-ENV PATH $XDG_CONFIG_HOME/nvm/versions/node/v$NODE_VERSION/bin:$PATH
+ENV PATH="$XDG_CONFIG_HOME/nvm/versions/node/v$NODE_VERSION/bin:$PATH"
+
+# Rust
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
+RUN echo 'source $HOME/.cargo/env' >> /root/.bashrc
+ENV PATH=/root/.cargo/bin:$PATH
 
 # Dockerfile
-RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm hadolint-bin=2.10.0-1'
+RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm --quiet hadolint-bin'
 
 # Lua
-RUN pacman -S --noconfirm stylua=0.13.1-1
+RUN pacman -S --noconfirm --quiet stylua
 
 # Shell
-RUN pacman -S --noconfirm shellcheck=0.8.0-127
-RUN pacman -S --noconfirm shfmt=3.5.1-1
+RUN pacman -S --noconfirm --quiet shellcheck
+RUN pacman -S --noconfirm --quiet shfmt
 
 # Neovim
-RUN pacman -S --noconfirm neovim=0.7.0-3
-RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm nvim-packer-git=r498.00ec5ad-1'
+RUN pacman -S --noconfirm --quiet neovim
+RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm --quiet nvim-packer-git'
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-RUN nvim --headless -c 'TSInstallSync lua dockerfile vue bash' -c 'q'
-RUN nvim --headless -c 'LspInstall --sync sumneko_lua dockerls volar bashls' -c 'q'
+RUN nvim --headless -c 'TSInstallSync lua dockerfile vue bash rust' -c 'q'
+RUN nvim --headless -c 'LspInstall --sync sumneko_lua dockerls volar bashls rust_analyzer' -c 'q'
 
 WORKDIR /root/workspace
 ENTRYPOINT ["/bin/bash"]
