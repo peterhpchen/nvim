@@ -23,3 +23,5 @@ lspconfig.volar.setup({})
 
 -- Shell
 lspconfig.bashls.setup({})
+
+lspconfig.taplo.setup({})
