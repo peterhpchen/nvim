@@ -51,5 +51,5 @@ RUN nvim --headless -c 'TSInstallSync lua dockerfile vue bash rust toml' -c 'q'
 RUN nvim --headless -c 'LspInstall --sync sumneko_lua dockerls volar bashls rust_analyzer taplo' -c 'q'
 
 WORKDIR /root/workspace
-ENTRYPOINT ["/bin/bash"]
-# CMD ["nvim"]
+ENTRYPOINT ["/bin/bash", "-l", "-c"]
+CMD ["nvim"]
