@@ -47,8 +47,8 @@ RUN pacman -S --noconfirm --quiet shfmt
 RUN pacman -S --noconfirm --quiet neovim
 RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm --quiet nvim-packer-git'
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-RUN nvim --headless -c 'TSInstallSync lua dockerfile vue bash rust toml' -c 'q'
-RUN nvim --headless -c 'LspInstall --sync sumneko_lua dockerls volar bashls rust_analyzer taplo' -c 'q'
+RUN nvim --headless -c 'TSInstallSync lua dockerfile vue bash rust toml json' -c 'q'
+RUN nvim --headless -c 'LspInstall --sync sumneko_lua dockerls volar bashls rust_analyzer taplo jsonls' -c 'q'
 
 WORKDIR /root/workspace
 ENTRYPOINT ["/bin/bash", "-l", "-c"]
