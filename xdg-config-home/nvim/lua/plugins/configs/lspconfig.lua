@@ -10,6 +10,12 @@ if not present2 then
   return
 end
 
+local present3, formatting_callback = pcall(require, 'lsp/formatting_callback')
+
+if not present3 then
+  return
+end
+
 -- Lua
 local luadev = lua_dev.setup({
   lspconfig = {
@@ -41,6 +47,9 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lspconfig.jsonls.setup({
   capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    formatting_callback(client, bufnr)
+  end,
   settings = {
     json = {
       schemas = vim.list_extend(
