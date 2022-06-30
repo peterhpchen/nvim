@@ -16,12 +16,13 @@ packer.startup(function(use)
   })
 
   use('b0o/schemastore.nvim')
+  use('folke/lua-dev.nvim')
 
   -- LSP
   use('williamboman/nvim-lsp-installer')
   use({
     'neovim/nvim-lspconfig',
-    after = { 'nvim-lsp-installer', 'schemastore.nvim' },
+    after = { 'nvim-lsp-installer', 'schemastore.nvim', 'lua-dev.nvim' },
     config = function()
       require('plugins/configs/lsp-installer')
       require('plugins/configs/lspconfig')
