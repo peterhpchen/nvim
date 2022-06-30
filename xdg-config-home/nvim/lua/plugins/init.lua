@@ -168,4 +168,11 @@ packer.startup(function(use)
       require('plugins/configs/indent-blankline')
     end,
   })
+
+  use({
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('plugins/configs/colorizer')
+    end,
+  })
 end)
