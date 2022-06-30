@@ -15,10 +15,9 @@ packer.startup(function(use)
     end,
   })
 
+  -- LSP
   use('b0o/schemastore.nvim')
   use('folke/lua-dev.nvim')
-
-  -- LSP
   use('williamboman/nvim-lsp-installer')
   use({
     'neovim/nvim-lspconfig',
@@ -55,9 +54,10 @@ packer.startup(function(use)
 
   -- completion and snippet
   use('rafamadriz/friendly-snippets')
+  use('onsails/lspkind.nvim')
   use({
     'hrsh7th/nvim-cmp',
-    after = 'friendly-snippets',
+    after = { 'friendly-snippets', 'lspkind.nvim' },
     config = function()
       require('plugins/configs/cmp')
     end,

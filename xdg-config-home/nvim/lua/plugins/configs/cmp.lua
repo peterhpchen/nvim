@@ -1,12 +1,23 @@
-local present, cmp = pcall(require, 'cmp')
+local present1, cmp = pcall(require, 'cmp')
 
-if not present then
+if not present1 then
+  return
+end
+
+local present2, lspkind = pcall(require, 'lspkind')
+
+if not present2 then
   return
 end
 
 vim.opt.completeopt = 'menu,menuone,noselect'
 
 cmp.setup({
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol_text',
+    }),
+  },
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
@@ -19,7 +30,7 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
-     ['<CR>'] = cmp.mapping.confirm({ select = true })
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = {
     { name = 'luasnip' },
