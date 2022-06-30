@@ -1,14 +1,13 @@
-local present, null_ls = pcall(require, 'null-ls')
+local present1, null_ls = pcall(require, 'null-ls')
 
-if not present then
+if not present1 then
   return
 end
 
-local formatting_callback = function(client, bufnr)
-  vim.keymap.set('n', '<leader>f', function()
-    local params = require('vim.lsp.util').make_formatting_params({})
-    client.request('textDocument/formatting', params, nil, bufnr)
-  end, {buffer = bufnr})
+local present2, formatting_callback = pcall(require, 'lsp/formatting_callback')
+
+if not present2 then
+  return
 end
 
 null_ls.setup({
