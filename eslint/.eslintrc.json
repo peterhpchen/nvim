@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "script",
+    "ecmaFeatures": {}
+  },
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "chrome": "readonly"
+  }
+}

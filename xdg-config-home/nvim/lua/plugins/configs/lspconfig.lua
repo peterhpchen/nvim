@@ -16,7 +16,15 @@ if not present3 then
   return
 end
 
--- Lua
+local present4, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+
+if not present4 then
+  return
+end
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
 local luadev = lua_dev.setup({
   lspconfig = {
     settings = {
@@ -30,20 +38,9 @@ local luadev = lua_dev.setup({
 })
 lspconfig.sumneko_lua.setup(luadev)
 
--- Dockerfile
 lspconfig.dockerls.setup({})
 
--- Vue
-lspconfig.volar.setup({})
-
--- Shell
 lspconfig.bashls.setup({})
-
-lspconfig.taplo.setup({})
-
---Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lspconfig.jsonls.setup({
   capabilities = capabilities,
@@ -62,10 +59,12 @@ lspconfig.jsonls.setup({
           },
         },
         require('schemastore').json.schemas({
-          select = {},
+          select = { '.eslintrc' },
         })
       ),
       validate = { enable = true },
     },
   },
 })
+
+lspconfig.eslint.setup({})
