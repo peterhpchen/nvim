@@ -39,14 +39,6 @@ local plugins = {
     end,
   },
 
-  -- Rust
-  ['simrat39/rust-tools.nvim'] = {
-    after = 'nvim-lspconfig',
-    config = function()
-      require('plugins/configs/rust-tools')
-    end,
-  },
-
   -- completion and snippet
   ['rafamadriz/friendly-snippets'] = {},
   ['onsails/lspkind.nvim'] = {},
@@ -159,6 +151,12 @@ local plugins = {
 }
 
 packer.startup(function(use)
+  local config = require('svim/core/default-config')
+  for _, ext in pairs(config.extensions) do
+    local ext_plugins = require(ext .. '/plugins')
+    plugins = vim.tbl_deep_extend('force', plugins, ext_plugins)
+  end
+
   local plugin_configs = {}
   for key, _ in pairs(plugins) do
     plugins[key][1] = key
