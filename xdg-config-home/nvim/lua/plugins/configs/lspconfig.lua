@@ -36,35 +36,42 @@ local luadev = lua_dev.setup({
     },
   },
 })
-lspconfig.sumneko_lua.setup(luadev)
 
-lspconfig.dockerls.setup({})
+local configs = {
+  ['sumneko_lua'] = luadev,
 
-lspconfig.bashls.setup({})
+  ['dockerls'] = {},
 
-lspconfig.jsonls.setup({
-  capabilities = capabilities,
-  on_attach = function(client, bufnr)
-    formatting_callback(client, bufnr)
-  end,
-  settings = {
-    json = {
-      schemas = vim.list_extend(
-        {
+  ['bashls'] = {},
+
+  ['jsonls'] = {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+      formatting_callback(client, bufnr)
+    end,
+    settings = {
+      json = {
+        schemas = vim.list_extend(
           {
-            description = 'Google Chrome extension manifest file',
-            fileMatch = { 'manifest.json' },
-            name = 'Chrome Extension',
-            url = 'https://json.schemastore.org/chrome-manifest.json',
+            {
+              description = 'Google Chrome extension manifest file',
+              fileMatch = { 'manifest.json' },
+              name = 'Chrome Extension',
+              url = 'https://json.schemastore.org/chrome-manifest.json',
+            },
           },
-        },
-        require('schemastore').json.schemas({
-          select = { '.eslintrc' },
-        })
-      ),
-      validate = { enable = true },
+          require('schemastore').json.schemas({
+            select = { '.eslintrc' },
+          })
+        ),
+        validate = { enable = true },
+      },
     },
   },
-})
 
-lspconfig.eslint.setup({})
+  ['eslint'] = {},
+}
+
+for name, config in pairs(configs) do
+  lspconfig[name].setup(config)
+end
