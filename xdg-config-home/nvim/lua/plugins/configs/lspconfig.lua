@@ -4,27 +4,7 @@ if not present1 then
   return
 end
 
-local present2, lua_dev = pcall(require, 'lua-dev')
-
-if not present2 then
-  return
-end
-
-local luadev = lua_dev.setup({
-  lspconfig = {
-    settings = {
-      Lua = {
-        diagnostics = {
-          globals = { 'vim' },
-        },
-      },
-    },
-  },
-})
-
 local lspconfigs = {
-  ['sumneko_lua'] = luadev,
-
   ['dockerls'] = {},
 
   ['bashls'] = {},
@@ -32,10 +12,12 @@ local lspconfigs = {
 
 local config = require('svim/core/default-config')
 for _, ext in pairs(config.extensions) do
-  local ext_lspconfig = require(ext .. '/plugins/configs/lspconfig')
-  lspconfigs = vim.tbl_deep_extend('force', lspconfigs, ext_lspconfig)
+  local ext_lspconfigs_exists, ext_lspconfigs = pcall(require, ext .. '/plugins/configs/lspconfig')
+  if ext_lspconfigs_exists then
+    lspconfigs = vim.tbl_deep_extend('force', lspconfigs, ext_lspconfigs)
+  end
 end
 
-for curlspname, curlspconfig in pairs(lspconfigs) do
-  lspconfig[curlspname].setup(curlspconfig)
+for cur_lspname, cur_lspconfig in pairs(lspconfigs) do
+  lspconfig[cur_lspname].setup(cur_lspconfig)
 end
