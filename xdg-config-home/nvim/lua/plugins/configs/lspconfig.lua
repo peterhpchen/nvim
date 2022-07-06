@@ -10,21 +10,6 @@ if not present2 then
   return
 end
 
-local present3, formatting_callback = pcall(require, 'lsp/formatting_callback')
-
-if not present3 then
-  return
-end
-
-local present4, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
-
-if not present4 then
-  return
-end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
-
 local luadev = lua_dev.setup({
   lspconfig = {
     settings = {
@@ -37,41 +22,20 @@ local luadev = lua_dev.setup({
   },
 })
 
-local configs = {
+local lspconfigs = {
   ['sumneko_lua'] = luadev,
 
   ['dockerls'] = {},
 
   ['bashls'] = {},
-
-  ['jsonls'] = {
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-      formatting_callback(client, bufnr)
-    end,
-    settings = {
-      json = {
-        schemas = vim.list_extend(
-          {
-            {
-              description = 'Google Chrome extension manifest file',
-              fileMatch = { 'manifest.json' },
-              name = 'Chrome Extension',
-              url = 'https://json.schemastore.org/chrome-manifest.json',
-            },
-          },
-          require('schemastore').json.schemas({
-            select = { '.eslintrc' },
-          })
-        ),
-        validate = { enable = true },
-      },
-    },
-  },
-
-  ['eslint'] = {},
 }
 
-for name, config in pairs(configs) do
-  lspconfig[name].setup(config)
+local config = require('svim/core/default-config')
+for _, ext in pairs(config.extensions) do
+  local ext_lspconfig = require(ext .. '/plugins/configs/lspconfig')
+  lspconfigs = vim.tbl_deep_extend('force', lspconfigs, ext_lspconfig)
+end
+
+for curlspname, curlspconfig in pairs(lspconfigs) do
+  lspconfig[curlspname].setup(curlspconfig)
 end

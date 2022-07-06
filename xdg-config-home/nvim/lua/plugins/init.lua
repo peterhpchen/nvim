@@ -153,8 +153,10 @@ local plugins = {
 packer.startup(function(use)
   local config = require('svim/core/default-config')
   for _, ext in pairs(config.extensions) do
-    local ext_plugins = require(ext .. '/plugins')
-    plugins = vim.tbl_deep_extend('force', plugins, ext_plugins)
+    local ext_plugins_exists, ext_plugins = pcall(require, ext .. '/plugins')
+    if ext_plugins_exists then
+      plugins = vim.tbl_deep_extend('force', plugins, ext_plugins)
+    end
   end
 
   local plugin_configs = {}
