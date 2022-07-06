@@ -9,11 +9,10 @@ return {
   },
 
   -- LSP
-  ['b0o/schemastore.nvim'] = {},
   ['folke/lua-dev.nvim'] = {},
   ['williamboman/nvim-lsp-installer'] = {},
   ['neovim/nvim-lspconfig'] = {
-    after = { 'nvim-lsp-installer', 'schemastore.nvim', 'lua-dev.nvim', 'cmp-nvim-lsp' },
+    after = { 'nvim-lsp-installer', 'lua-dev.nvim', 'cmp-nvim-lsp' },
     config = function()
       require('plugins/configs/lsp-installer')
       require('plugins/configs/lspconfig')
