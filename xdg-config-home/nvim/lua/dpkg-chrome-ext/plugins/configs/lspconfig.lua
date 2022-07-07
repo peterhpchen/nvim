@@ -1,10 +1,10 @@
-local present1, capabilities = pcall(require, 'lsp/capabilities')
+local present1, capabilities = pcall(require, 'svim/lsp/capabilities')
 
 if not present1 then
   return {}
 end
 
-local present2, on_attach = pcall(require, 'lsp/on_attach')
+local present2, on_attach = pcall(require, 'svim/lsp/on_attach')
 
 if not present2 then
   return {}
