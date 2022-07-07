@@ -10,6 +10,8 @@ if not present2 then
   return
 end
 
+local utils = require('svim.core.utils')
+
 local sources = {
   -- Dockerfile
   null_ls.builtins.diagnostics.hadolint,
@@ -20,7 +22,7 @@ local sources = {
   null_ls.builtins.formatting.shfmt,
 }
 
-local config = require('svim/core/default-config')
+local config = utils.load_config()
 for _, ext in pairs(config.extensions) do
   local ext_sources_exists, ext_sources = pcall(require, ext .. '/plugins/configs/null-ls')
   if ext_sources_exists then

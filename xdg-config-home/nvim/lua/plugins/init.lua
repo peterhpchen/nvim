@@ -10,8 +10,10 @@ if not present2 then
   return
 end
 
+local utils = require('svim.core.utils')
+
 packer.startup(function(use)
-  local config = require('svim/core/default-config')
+  local config = utils.load_config()
   for _, ext in pairs(config.extensions) do
     local ext_plugins_exists, ext_plugins = pcall(require, ext .. '/plugins')
     if ext_plugins_exists then
