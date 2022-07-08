@@ -4,7 +4,7 @@ return {
   ['nvim-treesitter/nvim-treesitter'] = {
     run = ':TSUpdate',
     config = function()
-      require('plugins/configs/treesitter')
+      require('svim/plugins/configs/treesitter')
     end,
   },
 
@@ -13,13 +13,13 @@ return {
   ['neovim/nvim-lspconfig'] = {
     after = { 'nvim-lsp-installer', 'cmp-nvim-lsp' },
     config = function()
-      require('plugins/configs/lsp-installer')
-      require('plugins/configs/lspconfig')
+      require('svim/plugins/configs/lsp-installer')
+      require('svim/plugins/configs/lspconfig')
     end,
   },
   ['jose-elias-alvarez/null-ls.nvim'] = {
     config = function()
-      require('plugins/configs/null-ls')
+      require('svim/plugins/configs/null-ls')
     end,
     requires = { 'nvim-lua/plenary.nvim' },
   },
@@ -27,7 +27,7 @@ return {
     after = 'nvim-lspconfig',
     branch = 'features', -- reset to main until merged
     config = function()
-      require('plugins/configs/lspsaga')
+      require('svim/plugins/configs/lspsaga')
     end,
   },
 
@@ -37,7 +37,7 @@ return {
   ['hrsh7th/nvim-cmp'] = {
     after = { 'friendly-snippets', 'lspkind.nvim' },
     config = function()
-      require('plugins/configs/cmp')
+      require('svim/plugins/configs/cmp')
     end,
   },
   ['L3MON4D3/LuaSnip'] = { after = 'nvim-cmp' },
@@ -50,7 +50,7 @@ return {
   ['windwp/nvim-autopairs'] = {
     after = 'nvim-cmp',
     config = function()
-      require('plugins/configs/autopairs')
+      require('svim/plugins/configs/autopairs')
     end,
   },
 
@@ -68,21 +68,21 @@ return {
   -- start page
   ['goolord/alpha-nvim'] = {
     config = function()
-      require('plugins/configs/alpha')
+      require('svim/plugins/configs/alpha')
     end,
   },
 
   -- sidebar
   ['kyazdani42/nvim-tree.lua'] = {
     config = function()
-      require('plugins/configs/nvim-tree')
+      require('svim/plugins/configs/nvim-tree')
     end,
   },
 
   -- status bar
   ['nvim-lualine/lualine.nvim'] = {
     config = function()
-      require('plugins/configs/lualine')
+      require('svim/plugins/configs/lualine')
     end,
   },
 
@@ -90,20 +90,20 @@ return {
   ['akinsho/bufferline.nvim'] = {
     tag = 'v2.*',
     config = function()
-      require('plugins/configs/bufferline')
+      require('svim/plugins/configs/bufferline')
     end,
   },
 
   ['numToStr/Comment.nvim'] = {
     config = function()
-      require('plugins/configs/comment')
+      require('svim/plugins/configs/comment')
     end,
   },
 
   -- finder
   ['nvim-telescope/telescope.nvim'] = {
     config = function()
-      require('plugins/configs/telescope')
+      require('svim/plugins/configs/telescope')
     end,
     requires = { 'nvim-lua/plenary.nvim' },
   },
@@ -111,33 +111,33 @@ return {
   -- git
   ['lewis6991/gitsigns.nvim'] = {
     config = function()
-      require('plugins/configs/gitsigns')
+      require('svim/plugins/configs/gitsigns')
     end,
   },
 
   -- key binding sheet
   ['folke/which-key.nvim'] = {
     config = function()
-      require('plugins/configs/which-key')
+      require('svim/plugins/configs/which-key')
     end,
   },
 
   ['folke/trouble.nvim'] = {
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require('plugins/configs/trouble')
+      require('svim/plugins/configs/trouble')
     end,
   },
 
   ['lukas-reineke/indent-blankline.nvim'] = {
     config = function()
-      require('plugins/configs/indent-blankline')
+      require('svim/plugins/configs/indent-blankline')
     end,
   },
 
   ['norcalli/nvim-colorizer.lua'] = {
     config = function()
-      require('plugins/configs/colorizer')
+      require('svim/plugins/configs/colorizer')
     end,
   },
 }
