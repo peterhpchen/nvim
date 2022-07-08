@@ -4,7 +4,7 @@ if not present1 then
   return
 end
 
-local present2, plugins = pcall(require, 'svim/plugins')
+local present2, plugins = pcall(require, 'svim/plugins/default-plugins')
 
 if not present2 then
   return

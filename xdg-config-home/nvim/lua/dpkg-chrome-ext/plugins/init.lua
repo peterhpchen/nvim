@@ -1,4 +1,4 @@
-local present, default_plugins = pcall(require, 'svim/plugins')
+local present, default_plugins = pcall(require, 'svim/plugins/default-plugins')
 
 if not present then
   return
