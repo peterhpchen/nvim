@@ -1,19 +1,17 @@
-local opt = vim.opt
+vim.opt.cursorline = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = 'yes'
 
-opt.cursorline = true
-opt.number = true
-opt.relativenumber = true
-opt.signcolumn = 'yes'
-
-opt.ignorecase = true
-opt.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- indenting
-opt.expandtab = true
-opt.shiftwidth = 2
-opt.tabstop = 2
-opt.smartindent = true
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.smartindent = true
 
-opt.showmode = false
+vim.opt.showmode = false
 
-opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = 'unnamedplus'
