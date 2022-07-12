@@ -5,7 +5,11 @@ if not present then
 end
 
 treesitter.setup({
-  -- ensure_installed = { 'lua', 'dockerfile' },
+  ensure_installed = {
+    'dockerfile',
+    'bash',
+    'lua',
+  },
   -- sync_install = true,
   highlight = { enable = true },
 })

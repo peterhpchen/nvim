@@ -6,5 +6,5 @@ end
 
 lsp_installer.setup({
   -- ensure_installed = { 'dockerls' },
-  -- automatic_installation = true,
+  automatic_installation = true,
 })
