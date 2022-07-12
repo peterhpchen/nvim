@@ -18,11 +18,14 @@ packer.startup(function(use)
   -- Lua
   use('folke/lua-dev.nvim')
 
+  -- JSON
+  use('b0o/schemastore.nvim')
+
   -- LSP
   use('williamboman/nvim-lsp-installer')
   use({
     'neovim/nvim-lspconfig',
-    after = { 'nvim-lsp-installer', 'cmp-nvim-lsp', 'lua-dev.nvim' },
+    after = { 'nvim-lsp-installer', 'cmp-nvim-lsp', 'lua-dev.nvim', 'schemastore.nvim' },
     config = function()
       require('svim/plugins/configs/lsp-installer')
       require('svim/plugins/configs/lspconfig')
