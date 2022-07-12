@@ -20,8 +20,8 @@ if schemastore_ok then
 end
 
 lspconfig.jsonls.setup({
-  capabilities = require('svim/lsp/capabilities'),
-  on_attach = require('svim/lsp/on_attach'),
+  capabilities = require('lsp.capabilities'),
+  on_attach = require('lsp.on_attach'),
   settings = {
     json = {
       schemas = schemas,

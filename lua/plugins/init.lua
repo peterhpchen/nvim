@@ -11,7 +11,7 @@ packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = function()
-      require('svim/plugins/configs/treesitter')
+      require('plugins.configs.treesitter')
     end,
   })
 
@@ -27,14 +27,14 @@ packer.startup(function(use)
     'neovim/nvim-lspconfig',
     after = { 'nvim-lsp-installer', 'cmp-nvim-lsp', 'lua-dev.nvim', 'schemastore.nvim' },
     config = function()
-      require('svim/plugins/configs/lsp-installer')
-      require('svim/plugins/configs/lspconfig')
+      require('plugins.configs.lsp-installer')
+      require('plugins.configs.lspconfig')
     end,
   })
   use({
     'jose-elias-alvarez/null-ls.nvim',
     config = function()
-      require('svim/plugins/configs/null-ls')
+      require('plugins.configs.null-ls')
     end,
     requires = { 'nvim-lua/plenary.nvim' },
   })
@@ -43,7 +43,7 @@ packer.startup(function(use)
     after = 'nvim-lspconfig',
     branch = 'features', -- reset to main until merged
     config = function()
-      require('svim/plugins/configs/lspsaga')
+      require('plugins.configs.lspsaga')
     end,
   })
 
@@ -52,7 +52,7 @@ packer.startup(function(use)
     'simrat39/rust-tools.nvim',
     after = 'nvim-lspconfig',
     config = function()
-      require('svim/plugins/configs/rust-tools')
+      require('plugins.configs.rust-tools')
     end,
   })
 
@@ -63,7 +63,7 @@ packer.startup(function(use)
     'hrsh7th/nvim-cmp',
     after = { 'friendly-snippets', 'lspkind.nvim' },
     config = function()
-      require('svim/plugins/configs/cmp')
+      require('plugins.configs.cmp')
     end,
   })
   use({ 'L3MON4D3/LuaSnip', after = 'nvim-cmp' })
@@ -77,7 +77,7 @@ packer.startup(function(use)
     'windwp/nvim-autopairs',
     after = 'nvim-cmp',
     config = function()
-      require('svim/plugins/configs/autopairs')
+      require('plugins.configs.autopairs')
     end,
   })
 
@@ -97,7 +97,7 @@ packer.startup(function(use)
   use({
     'goolord/alpha-nvim',
     config = function()
-      require('svim/plugins/configs/alpha')
+      require('plugins.configs.alpha')
     end,
   })
 
@@ -105,7 +105,7 @@ packer.startup(function(use)
   use({
     'kyazdani42/nvim-tree.lua',
     config = function()
-      require('svim/plugins/configs/nvim-tree')
+      require('plugins.configs.nvim-tree')
     end,
   })
 
@@ -113,7 +113,7 @@ packer.startup(function(use)
   use({
     'nvim-lualine/lualine.nvim',
     config = function()
-      require('svim/plugins/configs/lualine')
+      require('plugins.configs.lualine')
     end,
   })
 
@@ -122,14 +122,14 @@ packer.startup(function(use)
     'akinsho/bufferline.nvim',
     tag = 'v2.*',
     config = function()
-      require('svim/plugins/configs/bufferline')
+      require('plugins.configs.bufferline')
     end,
   })
 
   use({
     'numToStr/Comment.nvim',
     config = function()
-      require('svim/plugins/configs/comment')
+      require('plugins.configs.comment')
     end,
   })
 
@@ -137,7 +137,7 @@ packer.startup(function(use)
   use({
     'nvim-telescope/telescope.nvim',
     config = function()
-      require('svim/plugins/configs/telescope')
+      require('plugins.configs.telescope')
     end,
     requires = { 'nvim-lua/plenary.nvim' },
   })
@@ -146,7 +146,7 @@ packer.startup(function(use)
   use({
     'lewis6991/gitsigns.nvim',
     config = function()
-      require('svim/plugins/configs/gitsigns')
+      require('plugins.configs.gitsigns')
     end,
   })
 
@@ -154,7 +154,7 @@ packer.startup(function(use)
   use({
     'folke/which-key.nvim',
     config = function()
-      require('svim/plugins/configs/which-key')
+      require('plugins.configs.which-key')
     end,
   })
 
@@ -162,21 +162,21 @@ packer.startup(function(use)
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require('svim/plugins/configs/trouble')
+      require('plugins.configs.trouble')
     end,
   })
 
   use({
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require('svim/plugins/configs/indent-blankline')
+      require('plugins.configs.indent-blankline')
     end,
   })
 
   use({
     'norcalli/nvim-colorizer.lua',
     config = function()
-      require('svim/plugins/configs/colorizer')
+      require('plugins.configs.colorizer')
     end,
   })
 end)

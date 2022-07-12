@@ -1,17 +1,11 @@
-local present1, null_ls = pcall(require, 'null-ls')
+local null_ls_ok, null_ls = pcall(require, 'null-ls')
 
-if not present1 then
-  return
-end
-
-local present2, on_attach = pcall(require, 'svim/lsp/on_attach')
-
-if not present2 then
+if not null_ls_ok then
   return
 end
 
 null_ls.setup({
-  on_attach = on_attach,
+  on_attach = require('lsp.on_attach'),
   sources = {
     -- Dockerfile
     null_ls.builtins.diagnostics.hadolint,
