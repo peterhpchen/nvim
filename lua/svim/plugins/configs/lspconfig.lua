@@ -4,12 +4,30 @@ if not present1 then
   return
 end
 
+local present2, lua_dev = pcall(require, 'lua-dev')
+
+if not present2 then
+  return
+end
+
 local utils = require('svim.core.utils')
 
 local lspconfigs = {
   ['dockerls'] = {},
 
   ['bashls'] = {},
+
+  ['sumneko_lua'] = lua_dev.setup({
+    lspconfig = {
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { 'vim' },
+          },
+        },
+      },
+    },
+  })
 }
 
 local config = utils.load_config()

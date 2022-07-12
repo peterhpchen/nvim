@@ -20,6 +20,9 @@ local sources = {
   null_ls.builtins.code_actions.shellcheck,
   null_ls.builtins.diagnostics.shellcheck,
   null_ls.builtins.formatting.shfmt,
+
+  -- Lua
+  null_ls.builtins.formatting.stylua,
 }
 
 local config = utils.load_config()

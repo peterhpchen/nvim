@@ -1,34 +1,170 @@
-local present1, packer = pcall(require, 'packer')
+local present, packer = pcall(require, 'packer')
 
-if not present1 then
+if not present then
   return
 end
-
-local present2, plugins = pcall(require, 'svim/plugins/default-plugins')
-
-if not present2 then
-  return
-end
-
-local utils = require('svim.core.utils')
 
 packer.startup(function(use)
-  local config = utils.load_config()
-  for _, ext in pairs(config.extensions) do
-    local ext_plugins_exists, ext_plugins = pcall(require, ext .. '/plugins')
-    if ext_plugins_exists then
-      plugins = vim.tbl_deep_extend('force', plugins, ext_plugins)
-    end
-  end
+  use('wbthomason/packer.nvim')
 
-  local plugin_configs = {}
-  for key, _ in pairs(plugins) do
-    plugins[key][1] = key
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require('svim/plugins/configs/treesitter')
+    end,
+  })
 
-    plugin_configs[#plugin_configs + 1] = plugins[key]
-  end
+  -- Lua
+  use('folke/lua-dev.nvim')
 
-  for _, v in pairs(plugin_configs) do
-    use(v)
-  end
+  -- LSP
+  use('williamboman/nvim-lsp-installer')
+  use({
+    'neovim/nvim-lspconfig',
+    after = { 'nvim-lsp-installer', 'cmp-nvim-lsp', 'lua-dev.nvim' },
+    config = function()
+      require('svim/plugins/configs/lsp-installer')
+      require('svim/plugins/configs/lspconfig')
+    end,
+  })
+  use({
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function()
+      require('svim/plugins/configs/null-ls')
+    end,
+    requires = { 'nvim-lua/plenary.nvim' },
+  })
+  use({
+    'glepnir/lspsaga.nvim',
+    after = 'nvim-lspconfig',
+    branch = 'features', -- reset to main until merged
+    config = function()
+      require('svim/plugins/configs/lspsaga')
+    end,
+  })
+
+  -- completion and snippet
+  use('rafamadriz/friendly-snippets')
+  use('onsails/lspkind.nvim')
+  use({
+    'hrsh7th/nvim-cmp',
+    after = { 'friendly-snippets', 'lspkind.nvim' },
+    config = function()
+      require('svim/plugins/configs/cmp')
+    end,
+  })
+  use({ 'L3MON4D3/LuaSnip', after = 'nvim-cmp' })
+  use({ 'saadparwaiz1/cmp_luasnip', after = 'LuaSnip' })
+  use({ 'hrsh7th/cmp-nvim-lsp', after = 'cmp_luasnip' })
+  use({ 'hrsh7th/cmp-buffer', after = 'cmp-nvim-lsp' })
+  use({ 'hrsh7th/cmp-nvim-lua', after = 'cmp-buffer' })
+  use({ 'hrsh7th/cmp-path', after = 'cmp-nvim-lua' })
+
+  use({
+    'windwp/nvim-autopairs',
+    after = 'nvim-cmp',
+    config = function()
+      require('svim/plugins/configs/autopairs')
+    end,
+  })
+
+  -- theme
+  -- ['folke/tokyonight.nvim'] = {
+  -- ['EdenEast/nightfox.nvim'] = {
+  use({
+    'rebelot/kanagawa.nvim',
+    config = function()
+      vim.cmd('silent! colorscheme kanagawa')
+    end,
+  })
+
+  use('kyazdani42/nvim-web-devicons')
+
+  -- start page
+  use({
+    'goolord/alpha-nvim',
+    config = function()
+      require('svim/plugins/configs/alpha')
+    end,
+  })
+
+  -- sidebar
+  use({
+    'kyazdani42/nvim-tree.lua',
+    config = function()
+      require('svim/plugins/configs/nvim-tree')
+    end,
+  })
+
+  -- status bar
+  use({
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require('svim/plugins/configs/lualine')
+    end,
+  })
+
+  -- tab bar
+  use({
+    'akinsho/bufferline.nvim',
+    tag = 'v2.*',
+    config = function()
+      require('svim/plugins/configs/bufferline')
+    end,
+  })
+
+  use({
+    'numToStr/Comment.nvim',
+    config = function()
+      require('svim/plugins/configs/comment')
+    end,
+  })
+
+  -- finder
+  use({
+    'nvim-telescope/telescope.nvim',
+    config = function()
+      require('svim/plugins/configs/telescope')
+    end,
+    requires = { 'nvim-lua/plenary.nvim' },
+  })
+
+  -- git
+  use({
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('svim/plugins/configs/gitsigns')
+    end,
+  })
+
+  -- key binding sheet
+  use({
+    'folke/which-key.nvim',
+    config = function()
+      require('svim/plugins/configs/which-key')
+    end,
+  })
+
+  use({
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require('svim/plugins/configs/trouble')
+    end,
+  })
+
+  use({
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('svim/plugins/configs/indent-blankline')
+    end,
+  })
+
+  use({
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('svim/plugins/configs/colorizer')
+    end,
+  })
 end)
