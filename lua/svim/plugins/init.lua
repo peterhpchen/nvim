@@ -47,6 +47,15 @@ packer.startup(function(use)
     end,
   })
 
+  -- Rust
+  use({
+    'simrat39/rust-tools.nvim',
+    after = 'nvim-lspconfig',
+    config = function()
+      require('svim/plugins/configs/rust-tools')
+    end,
+  })
+
   -- completion and snippet
   use('rafamadriz/friendly-snippets')
   use('onsails/lspkind.nvim')
