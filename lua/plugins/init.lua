@@ -1,7 +1,18 @@
-local present, packer = pcall(require, 'packer')
-
-if not present then
-  return
+local packer_ok, packer = pcall(require, 'packer')
+if not packer_ok then
+  local fn = vim.fn
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    packer_bootstrap = fn.system({
+      'git',
+      'clone',
+      '--depth',
+      '1',
+      'https://github.com/wbthomason/packer.nvim',
+      install_path,
+    })
+    packer = require('packer')
+  end
 end
 
 packer.startup(function(use)
@@ -179,4 +190,8 @@ packer.startup(function(use)
       require('plugins.configs.colorizer')
     end,
   })
+
+  if packer_bootstrap then
+    packer.sync()
+  end
 end)
