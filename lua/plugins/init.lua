@@ -21,6 +21,14 @@ packer.startup(function(use)
 
   -- JSON
   use('b0o/schemastore.nvim')
+  -- disable because bug issue https://github.com/vuki656/package-info.nvim/issues/127
+  -- use({
+  --   'vuki656/package-info.nvim',
+  --   config = function()
+  --     require('plugins.configs.package-info')
+  --   end,
+  --   requires = 'MunifTanjim/nui.nvim',
+  -- })
 
   -- LSP
   use('williamboman/nvim-lsp-installer')
