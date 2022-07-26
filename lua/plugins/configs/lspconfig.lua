@@ -7,3 +7,5 @@ require('lsp.servers.sumneko_lua')
 require('lsp.servers.jsonls')
 
 require('lsp.servers.eslint')
+
+require('lsp.servers.volar')

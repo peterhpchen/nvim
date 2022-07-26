@@ -11,6 +11,7 @@ treesitter.setup({
     'lua',
     'json',
     'javascript',
+    'vue',
     'rust',
   },
   -- sync_install = true,
