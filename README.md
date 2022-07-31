@@ -5,7 +5,7 @@
 Install this config by the below command:
 
 ```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/sunnyvim/sunnyvim/main/utils/installer/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/peterhpchen/nvim/main/utils/installer/install.sh)"
 ```
 
 ## Uninstall

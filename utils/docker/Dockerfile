@@ -13,7 +13,7 @@ RUN pacman -S --noconfirm --quiet unzip ripgrep fd
 
 RUN pacman -S --noconfirm --quiet git
 
-RUN git clone https://github.com/sunnyvim/sunnyvim.git $XDG_CONFIG_HOME/nvim
+RUN git clone https://github.com/peterhpchen/nvim.git $XDG_CONFIG_HOME/nvim
 
 RUN touch /root/.bashrc
 
