@@ -14,9 +14,12 @@ nvim_tree.setup({
   },
   renderer = {
     indent_markers = {
-      enable = true
-    }
-  }
+      enable = true,
+    },
+  },
+  filters = {
+    custom = { '^.git$' },
+  },
 })
 
 vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
