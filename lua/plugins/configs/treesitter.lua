@@ -13,6 +13,7 @@ treesitter.setup({
     'javascript',
     'vue',
     'rust',
+    'python',
   },
   -- sync_install = true,
   highlight = { enable = true },

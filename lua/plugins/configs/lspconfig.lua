@@ -9,3 +9,5 @@ require('lsp.servers.jsonls')
 require('lsp.servers.eslint')
 
 require('lsp.servers.volar')
+
+require('lsp.servers.pyright')
