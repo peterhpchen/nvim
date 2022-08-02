@@ -31,12 +31,26 @@ packer.startup(function(use)
   -- })
 
   -- LSP
-  use('williamboman/nvim-lsp-installer')
+  use('williamboman/mason.nvim')
+  use('williamboman/mason-lspconfig.nvim')
+  use({
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    config = function()
+      require('plugins.configs.mason-tool-installer')
+    end,
+  })
   use({
     'neovim/nvim-lspconfig',
-    after = { 'nvim-lsp-installer', 'cmp-nvim-lsp', 'lua-dev.nvim', 'schemastore.nvim' },
+    after = {
+      'mason.nvim',
+      'mason-lspconfig.nvim',
+      'cmp-nvim-lsp',
+      'lua-dev.nvim',
+      'schemastore.nvim',
+    },
     config = function()
-      require('plugins.configs.lsp-installer')
+      require('plugins.configs.mason')
+      require('plugins.configs.mason-lspconfig')
       require('plugins.configs.lspconfig')
     end,
   })

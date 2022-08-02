@@ -27,16 +27,6 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 RUN echo 'source $HOME/.cargo/env' >> /root/.bashrc
 ENV PATH=/root/.cargo/bin:$PATH
 
-# Dockerfile
-RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm --quiet hadolint-bin'
-
-# Lua
-RUN pacman -S --noconfirm --quiet stylua
-
-# Shell
-RUN pacman -S --noconfirm --quiet shellcheck
-RUN pacman -S --noconfirm --quiet shfmt
-
 # Neovim
 RUN pacman -S --noconfirm --quiet neovim
 RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm --quiet nvim-packer-git'
