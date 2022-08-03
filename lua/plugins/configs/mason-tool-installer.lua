@@ -18,6 +18,8 @@ mason_tool_installer.setup({
     -- javascript
     'eslint-lsp',
     'vue-language-server',
+    'prettierd',
+    'eslint_d',
 
     -- json
     'json-lsp',
