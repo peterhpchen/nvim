@@ -21,5 +21,8 @@ null_ls.setup({
     -- Python
     null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.isort,
+
+    -- JavaScript
+    null_ls.builtins.formatting.prettierd,
   },
 })
