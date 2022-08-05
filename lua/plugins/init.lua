@@ -89,7 +89,13 @@ packer.startup(function(use)
       require('plugins.configs.cmp')
     end,
   })
-  use({ 'L3MON4D3/LuaSnip', after = 'nvim-cmp' })
+  use({
+    'L3MON4D3/LuaSnip',
+    after = 'nvim-cmp',
+    config = function()
+      require('plugins.configs.luasnip')
+    end,
+  })
   use({ 'saadparwaiz1/cmp_luasnip', after = 'LuaSnip' })
   use({ 'hrsh7th/cmp-nvim-lsp', after = 'cmp_luasnip' })
   use({ 'hrsh7th/cmp-buffer', after = 'cmp-nvim-lsp' })
