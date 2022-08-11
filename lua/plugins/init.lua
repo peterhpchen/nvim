@@ -8,14 +8,6 @@ vim.cmd('packadd packer.nvim')
 packer.startup(function(use)
   use('wbthomason/packer.nvim')
 
-  use({
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    config = function()
-      require('plugins.configs.treesitter')
-    end,
-  })
-
   -- Lua
   use('folke/lua-dev.nvim')
 
@@ -113,6 +105,15 @@ packer.startup(function(use)
     'windwp/nvim-ts-autotag',
     config = function()
       require('plugins.configs.ts-autotag')
+    end,
+  })
+
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    after = 'nvim-ts-autotag.nvim',
+    config = function()
+      require('plugins.configs.treesitter')
     end,
   })
 
