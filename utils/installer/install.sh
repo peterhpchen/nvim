@@ -1,5 +1,7 @@
 #!/bin/sh
 
+XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+
 if [ ! "$(command -v git)" ]; then
   echo "Please install Git first."
   exit 1
@@ -10,22 +12,10 @@ if [ ! "$(command -v nvim)" ]; then
   exit 1
 fi
 
-if [ ! "$(command -v hadolint)" ]; then
-  echo "Please install hadolint first."
-  exit 1
+if [ ! -d "$XDG_DATA_HOME/nvim/site/pack/packer/start/packer.nvim" ]; then
+  echo "packer.nvim not installed. Installing."
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim "$XDG_DATA_HOME/nvim/site/pack/packer/start/packer.nvim"
 fi
 
-if [ ! "$(command -v shellcheck)" ]; then
-  echo "Please install ShellCheck first."
-  exit 1
-fi
-
-if [ ! "$(command -v shfmt)" ]; then
-  echo "Please install shfmt first."
-  exit 1
-fi
-
-if [ ! "$(command -v stylua)" ]; then
-  echo "Please install StyLua first."
-  exit 1
-fi
+echo "packer.nvim setup."
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
