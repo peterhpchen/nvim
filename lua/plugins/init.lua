@@ -109,6 +109,12 @@ packer.startup(function(use)
       require('plugins.configs.autopairs')
     end,
   })
+  use({
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('plugins.configs.ts-autotag')
+    end,
+  })
 
   -- theme
   -- ['folke/tokyonight.nvim'] = {
