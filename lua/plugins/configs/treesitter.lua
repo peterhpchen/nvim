@@ -15,6 +15,6 @@ treesitter.setup({
     'rust',
     'python',
   },
-  -- sync_install = true,
+  sync_install = true,
   highlight = { enable = true },
 })
