@@ -6,15 +6,20 @@ end
 
 treesitter.setup({
   ensure_installed = {
-    'dockerfile',
     'bash',
-    'lua',
-    'json',
+    'css',
+    'dockerfile',
+    'html',
     'javascript',
-    'vue',
-    'rust',
+    'json',
+    'lua',
     'python',
+    'rust',
+    'toml',
+    'vue',
+    'yaml',
   },
+  -- install sync for install script
   sync_install = true,
   highlight = { enable = true },
 })
