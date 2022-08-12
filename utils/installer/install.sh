@@ -29,4 +29,4 @@ if [ ! -d "$XDG_DATA_HOME/nvim/site/pack/packer/start/packer.nvim" ]; then
 fi
 
 echo "packer.nvim setup."
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+nvim --headless -c "autocmd User PackerComplete quitall" -c "PackerSync"
