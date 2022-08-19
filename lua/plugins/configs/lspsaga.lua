@@ -1,6 +1,6 @@
-local present, saga = pcall(require, 'lspsaga')
+local lspsaga_ok, saga = pcall(require, 'lspsaga')
 
-if not present then
+if not lspsaga_ok then
   return
 end
 

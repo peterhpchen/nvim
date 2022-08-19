@@ -64,7 +64,6 @@ packer.startup(function(use)
   use({
     'glepnir/lspsaga.nvim',
     after = 'nvim-lspconfig',
-    branch = 'features', -- reset to main until merged
     config = function()
       require('plugins.configs.lspsaga')
     end,
