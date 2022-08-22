@@ -24,5 +24,8 @@ null_ls.setup({
 
     -- JavaScript
     null_ls.builtins.formatting.prettierd,
+
+    -- Git
+    null_ls.builtins.code_actions.gitsigns,
   },
 })
