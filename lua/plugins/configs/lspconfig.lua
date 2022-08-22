@@ -11,3 +11,5 @@ require('lsp.servers.eslint')
 require('lsp.servers.volar')
 
 require('lsp.servers.pyright')
+
+require('lsp.servers.tsserver')
