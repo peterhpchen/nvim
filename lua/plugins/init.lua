@@ -213,4 +213,12 @@ packer.startup(function(use)
       require('plugins.configs.colorizer')
     end,
   })
+
+  use({
+    'akinsho/toggleterm.nvim',
+    tag = 'v2.*',
+    config = function()
+      require('plugins.configs.toggleterm')
+    end,
+  })
 end)
