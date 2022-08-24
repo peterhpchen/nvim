@@ -1,11 +1,12 @@
-local present, treesitter = pcall(require, 'nvim-treesitter.configs')
+local treesitter_ok, treesitter = pcall(require, 'nvim-treesitter.configs')
 
-if not present then
+if not treesitter_ok then
   return
 end
 
 treesitter.setup({
   ensure_installed = {
+    'astro',
     'bash',
     'css',
     'dockerfile',
@@ -16,10 +17,12 @@ treesitter.setup({
     'python',
     'rust',
     'toml',
+    'typescript',
     'vue',
     'yaml',
   },
   -- install sync for install script
   sync_install = true,
+  auto_install = true,
   highlight = { enable = true },
 })

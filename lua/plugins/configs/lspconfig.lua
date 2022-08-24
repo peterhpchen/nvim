@@ -13,3 +13,5 @@ require('lsp.servers.volar')
 require('lsp.servers.pyright')
 
 require('lsp.servers.tsserver')
+
+require('lsp.servers.astro')
