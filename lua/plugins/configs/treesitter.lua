@@ -24,5 +24,13 @@ treesitter.setup({
   -- install sync for install script
   sync_install = true,
   auto_install = true,
+
   highlight = { enable = true },
+  context_commentstring = {
+    enable = true,
+    config = {
+      astro = '<!-- %s -->',
+    },
+    enable_autocmd = false,
+  },
 })

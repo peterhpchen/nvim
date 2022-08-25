@@ -15,6 +15,7 @@ packer.startup(function(use)
       require('plugins.configs.treesitter')
     end,
   })
+  use('JoosepAlviste/nvim-ts-context-commentstring')
 
   -- Lua
   use('folke/lua-dev.nvim')
