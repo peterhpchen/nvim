@@ -28,9 +28,6 @@ treesitter.setup({
   highlight = { enable = true },
   context_commentstring = {
     enable = true,
-    config = {
-      astro = '<!-- %s -->',
-    },
     enable_autocmd = false,
   },
 })
