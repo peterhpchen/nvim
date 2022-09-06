@@ -4,7 +4,7 @@ XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 NVIM_CONFIG_DIR="$XDG_CONFIG_HOME/nvim"
-REMOTE=https://github.com/peterhpchen/nvim.git
+REMOTE=git@github.com:peterhpchen/nvim.git
 
 if [ ! "$(command -v git)" ]; then
   echo "Please install Git first."
