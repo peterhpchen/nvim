@@ -18,7 +18,6 @@ mason_tool_installer.setup({
     'eslint_d',
 
     -- python
-    'pyright',
     'black',
     'isort',
 
