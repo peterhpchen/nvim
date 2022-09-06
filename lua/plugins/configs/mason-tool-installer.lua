@@ -7,22 +7,15 @@ end
 mason_tool_installer.setup({
   ensure_installed = {
     -- sh
-    'bash-language-server',
     'shellcheck',
     'shfmt',
 
     -- dockerfile
-    'dockerfile-language-server',
     'hadolint',
 
     -- javascript
-    'eslint-lsp',
-    'vue-language-server',
     'prettierd',
     'eslint_d',
-
-    -- json
-    'json-lsp',
 
     -- python
     'pyright',
@@ -30,7 +23,6 @@ mason_tool_installer.setup({
     'isort',
 
     -- lua
-    'lua-language-server',
     'stylua',
   },
 })
