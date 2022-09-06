@@ -30,3 +30,4 @@ fi
 
 echo "packer.nvim setup."
 nvim --headless -c "autocmd User PackerComplete quitall" -c "PackerSync"
+nvim --headless -c 'autocmd User MasonToolsUpdateCompleted quitall' -c 'MasonToolsUpdate'
