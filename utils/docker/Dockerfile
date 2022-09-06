@@ -48,6 +48,7 @@ RUN source /root/.bashrc && pyenv install $PYTHON_VERSION && pyenv global "$PYTH
 RUN pacman -S --noconfirm --quiet neovim
 RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm --quiet nvim-packer-git'
 RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+RUN nvim --headless -c 'autocmd User MasonToolsUpdateCompleted quitall' -c 'MasonToolsUpdate'
 
 WORKDIR /root/workspace
 ENTRYPOINT ["/bin/bash", "-l", "-c"]
