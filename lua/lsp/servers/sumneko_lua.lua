@@ -14,12 +14,10 @@ local server_config = {
   },
 }
 
-local lua_dev_ok, lua_dev = pcall(require, 'lua-dev')
+local neodev_ok, neodev = pcall(require, 'neodev')
 
-if lua_dev_ok then
-  server_config = lua_dev.setup({
-    lspconfig = server_config,
-  })
+if neodev_ok then
+  neodev.setup({})
 end
 
 lspconfig.sumneko_lua.setup(server_config)

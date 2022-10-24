@@ -18,7 +18,7 @@ packer.startup(function(use)
   use('JoosepAlviste/nvim-ts-context-commentstring')
 
   -- Lua
-  use('folke/lua-dev.nvim')
+  use('folke/neodev.nvim')
 
   -- JSON
   use('b0o/schemastore.nvim')
@@ -46,7 +46,7 @@ packer.startup(function(use)
       'mason.nvim',
       'mason-lspconfig.nvim',
       'cmp-nvim-lsp',
-      'lua-dev.nvim',
+      'neodev.nvim',
       'schemastore.nvim',
     },
     config = function()
