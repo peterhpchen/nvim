@@ -15,3 +15,5 @@ vim.opt.smartindent = true
 vim.opt.showmode = false
 
 vim.opt.clipboard = 'unnamedplus'
+
+vim.opt.mouse = nil
