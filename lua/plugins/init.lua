@@ -69,6 +69,12 @@ packer.startup(function(use)
       require('plugins.configs.lspsaga')
     end,
   })
+  use({
+    'j-hui/fidget.nvim',
+    config = function()
+      require('plugins.configs.fidget')
+    end,
+  })
 
   -- Rust
   use({
