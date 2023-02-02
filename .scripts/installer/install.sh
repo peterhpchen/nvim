@@ -16,6 +16,11 @@ if [ ! "$(command -v nvim)" ]; then
   exit 1
 fi
 
+if [ ! "$(command -v im-select)" ]; then
+  echo "Please install im-select first."
+  exit 1
+fi
+
 if [ -d "$NVIM_CONFIG_DIR" ]; then
   echo "The $NVIM_CONFIG_DIR folder already exists. Please remove it."
   exit 1
