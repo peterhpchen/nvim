@@ -228,4 +228,11 @@ packer.startup(function(use)
       require('plugins.configs.toggleterm')
     end,
   })
+
+  use({
+    'keaising/im-select.nvim',
+    config = function()
+      require('plugins.configs.im-select')
+    end
+  })
 end)
