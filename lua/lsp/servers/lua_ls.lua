@@ -20,4 +20,4 @@ if neodev_ok then
   neodev.setup({})
 end
 
-lspconfig.sumneko_lua.setup(server_config)
+lspconfig.lua_ls.setup(server_config)
