@@ -5,7 +5,7 @@ if not null_ls_ok then
 end
 
 null_ls.setup({
-  on_attach = require('lsp.on_attach'),
+  on_attach = require('peterhpchen.lsp.on_attach'),
   sources = {
     -- Dockerfile
     null_ls.builtins.diagnostics.hadolint,

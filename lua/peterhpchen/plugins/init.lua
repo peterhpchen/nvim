@@ -12,7 +12,7 @@ packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = function()
-      require('plugins.configs.treesitter')
+      require('peterhpchen.plugins.configs.treesitter')
     end,
   })
   use('JoosepAlviste/nvim-ts-context-commentstring')
@@ -26,7 +26,7 @@ packer.startup(function(use)
   -- use({
   --   'vuki656/package-info.nvim',
   --     config = function()
-  --     require('plugins.configs.package-info')
+  --     require('peterhpchen.plugins.configs.package-info')
   --   end,
   --   requires = 'MunifTanjim/nui.nvim',
   -- })
@@ -37,7 +37,7 @@ packer.startup(function(use)
   use({
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     config = function()
-      require('plugins.configs.mason-tool-installer')
+      require('peterhpchen.plugins.configs.mason-tool-installer')
     end,
   })
   use({
@@ -50,29 +50,29 @@ packer.startup(function(use)
       'schemastore.nvim',
     },
     config = function()
-      require('plugins.configs.mason')
-      require('plugins.configs.mason-lspconfig')
-      require('plugins.configs.lspconfig')
+      require('peterhpchen.plugins.configs.mason')
+      require('peterhpchen.plugins.configs.mason-lspconfig')
+      require('peterhpchen.plugins.configs.lspconfig')
     end,
   })
   use({
     'jose-elias-alvarez/null-ls.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require('plugins.configs.null-ls')
+      require('peterhpchen.plugins.configs.null-ls')
     end,
   })
   use({
     'glepnir/lspsaga.nvim',
     after = 'nvim-lspconfig',
     config = function()
-      require('plugins.configs.lspsaga')
+      require('peterhpchen.plugins.configs.lspsaga')
     end,
   })
   use({
     'j-hui/fidget.nvim',
     config = function()
-      require('plugins.configs.fidget')
+      require('peterhpchen.plugins.configs.fidget')
     end,
   })
 
@@ -81,7 +81,7 @@ packer.startup(function(use)
     'simrat39/rust-tools.nvim',
     after = 'nvim-lspconfig',
     config = function()
-      require('plugins.configs.rust-tools')
+      require('peterhpchen.plugins.configs.rust-tools')
     end,
   })
 
@@ -92,14 +92,14 @@ packer.startup(function(use)
     'hrsh7th/nvim-cmp',
     after = { 'friendly-snippets', 'lspkind.nvim' },
     config = function()
-      require('plugins.configs.cmp')
+      require('peterhpchen.plugins.configs.cmp')
     end,
   })
   use({
     'L3MON4D3/LuaSnip',
     after = 'nvim-cmp',
     config = function()
-      require('plugins.configs.luasnip')
+      require('peterhpchen.plugins.configs.luasnip')
     end,
   })
   use({ 'saadparwaiz1/cmp_luasnip', after = 'LuaSnip' })
@@ -112,13 +112,13 @@ packer.startup(function(use)
     'windwp/nvim-autopairs',
     after = 'nvim-cmp',
     config = function()
-      require('plugins.configs.autopairs')
+      require('peterhpchen.plugins.configs.autopairs')
     end,
   })
   use({
     'windwp/nvim-ts-autotag',
     config = function()
-      require('plugins.configs.ts-autotag')
+      require('peterhpchen.plugins.configs.ts-autotag')
     end,
   })
 
@@ -138,7 +138,7 @@ packer.startup(function(use)
   use({
     'goolord/alpha-nvim',
     config = function()
-      require('plugins.configs.alpha')
+      require('peterhpchen.plugins.configs.alpha')
     end,
   })
 
@@ -146,7 +146,7 @@ packer.startup(function(use)
   use({
     'kyazdani42/nvim-tree.lua',
     config = function()
-      require('plugins.configs.nvim-tree')
+      require('peterhpchen.plugins.configs.nvim-tree')
     end,
   })
 
@@ -154,7 +154,7 @@ packer.startup(function(use)
   use({
     'nvim-lualine/lualine.nvim',
     config = function()
-      require('plugins.configs.lualine')
+      require('peterhpchen.plugins.configs.lualine')
     end,
   })
 
@@ -163,14 +163,14 @@ packer.startup(function(use)
     'akinsho/bufferline.nvim',
     tag = 'v2.*',
     config = function()
-      require('plugins.configs.bufferline')
+      require('peterhpchen.plugins.configs.bufferline')
     end,
   })
 
   use({
     'numToStr/Comment.nvim',
     config = function()
-      require('plugins.configs.comment')
+      require('peterhpchen.plugins.configs.comment')
     end,
   })
 
@@ -178,7 +178,7 @@ packer.startup(function(use)
   use({
     'nvim-telescope/telescope.nvim',
     config = function()
-      require('plugins.configs.telescope')
+      require('peterhpchen.plugins.configs.telescope')
     end,
     requires = { 'nvim-lua/plenary.nvim' },
   })
@@ -187,7 +187,7 @@ packer.startup(function(use)
   use({
     'lewis6991/gitsigns.nvim',
     config = function()
-      require('plugins.configs.gitsigns')
+      require('peterhpchen.plugins.configs.gitsigns')
     end,
   })
 
@@ -195,7 +195,7 @@ packer.startup(function(use)
   use({
     'folke/which-key.nvim',
     config = function()
-      require('plugins.configs.which-key')
+      require('peterhpchen.plugins.configs.which-key')
     end,
   })
 
@@ -203,21 +203,21 @@ packer.startup(function(use)
     'folke/trouble.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-      require('plugins.configs.trouble')
+      require('peterhpchen.plugins.configs.trouble')
     end,
   })
 
   use({
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require('plugins.configs.indent-blankline')
+      require('peterhpchen.plugins.configs.indent-blankline')
     end,
   })
 
   use({
     'norcalli/nvim-colorizer.lua',
     config = function()
-      require('plugins.configs.colorizer')
+      require('peterhpchen.plugins.configs.colorizer')
     end,
   })
 
@@ -225,14 +225,14 @@ packer.startup(function(use)
     'akinsho/toggleterm.nvim',
     tag = 'v2.*',
     config = function()
-      require('plugins.configs.toggleterm')
+      require('peterhpchen.plugins.configs.toggleterm')
     end,
   })
 
   use({
     'keaising/im-select.nvim',
     config = function()
-      require('plugins.configs.im-select')
+      require('peterhpchen.plugins.configs.im-select')
     end,
   })
 end)
