@@ -18,6 +18,7 @@ treesitter.setup({
     'python',
     'rust',
     'toml',
+    'tsx',
     'typescript',
     'vue',
     'yaml',
