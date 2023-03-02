@@ -6,7 +6,7 @@ end
 
 wk.setup({})
 
-local mappings_ok, core_mappings = pcall(require, 'core.mappings')
+local mappings_ok, core_mappings = pcall(require, 'peterhpchen.core.mappings')
 
 if not mappings_ok then
   return
