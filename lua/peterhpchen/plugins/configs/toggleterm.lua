@@ -29,4 +29,4 @@ function _chtsh_toggle()
   chtsh:toggle()
 end
 
-vim.api.nvim_set_keymap('n', '<leader>cht', '<cmd>lua _chtsh_toggle()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>cht', '<cmd>lua _chtsh_toggle()<CR>', { noremap = true, silent = true })

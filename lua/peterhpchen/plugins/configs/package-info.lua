@@ -6,9 +6,4 @@ end
 
 package_info.setup()
 
-vim.api.nvim_set_keymap(
-  'n',
-  '<leader>ns',
-  "<cmd>lua require('package-info').show()<cr>",
-  { silent = true, noremap = true }
-)
+vim.keymap.set('n', '<leader>ns', "<cmd>lua require('package-info').show()<cr>", { silent = true, noremap = true })
