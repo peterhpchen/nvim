@@ -1,6 +1,13 @@
+local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 return function(client, bufnr)
-  vim.keymap.set('n', '<leader>f', function()
-    local params = require('vim.lsp.util').make_formatting_params({})
-    client.request('textDocument/formatting', params, nil, bufnr)
-  end, { buffer = bufnr })
+  if client.supports_method('textDocument/formatting') then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({ bufnr = bufnr })
+      end,
+    })
+  end
 end
