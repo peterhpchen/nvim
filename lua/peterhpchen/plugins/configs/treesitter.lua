@@ -25,7 +25,7 @@ treesitter.setup({
     'yaml',
   },
   -- install sync for install script
-  sync_install = true,
+  -- sync_install = true,
   auto_install = true,
 
   highlight = { enable = true },

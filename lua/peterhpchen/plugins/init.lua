@@ -247,4 +247,6 @@ require('lazy').setup({
       require('peterhpchen.plugins.configs.undotree')
     end,
   },
+
+  'github/copilot.vim',
 })
