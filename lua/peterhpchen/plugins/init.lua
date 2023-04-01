@@ -180,10 +180,13 @@ require('lazy').setup({
   -- finder
   {
     'nvim-telescope/telescope.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'debugloop/telescope-undo.nvim',
+    },
     config = function()
       require('peterhpchen.plugins.configs.telescope')
     end,
-    dependencies = { 'nvim-lua/plenary.nvim' },
   },
 
   -- git
