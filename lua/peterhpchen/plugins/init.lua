@@ -182,7 +182,6 @@ require('lazy').setup({
     'nvim-telescope/telescope.nvim',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      'debugloop/telescope-undo.nvim',
     },
     config = function()
       require('peterhpchen.plugins.configs.telescope')
@@ -239,6 +238,13 @@ require('lazy').setup({
     'keaising/im-select.nvim',
     config = function()
       require('peterhpchen.plugins.configs.im-select')
+    end,
+  },
+
+  {
+    'mbbill/undotree',
+    config = function()
+      require('peterhpchen.plugins.configs.undotree')
     end,
   },
 })

@@ -8,11 +8,7 @@ telescope.setup({
   defaults = {
     layout_strategy = 'flex',
   },
-  extensions = {
-    undo = {},
-  },
 })
-telescope.load_extension('undo')
 
 vim.keymap.set(
   'n',
@@ -36,5 +32,3 @@ vim.keymap.set('n', '<leader>fb', '<cmd> Telescope buffers <CR>', { noremap = tr
 vim.keymap.set('n', '<leader>fh', '<cmd> Telescope help_tags <CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>fo', '<cmd> Telescope oldfiles <CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>tk', '<cmd> Telescope keymaps <CR>', { noremap = true, silent = true })
-
-vim.keymap.set('n', '<leader>u', '<cmd>Telescope undo<cr>')
