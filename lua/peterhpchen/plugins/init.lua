@@ -127,14 +127,18 @@ require('lazy').setup({
     end,
   },
 
-  -- theme
-  -- 'folke/tokyonight.nvim'
-  -- 'EdenEast/nightfox.nvim'
+  -- colorscheme
+  {
+    'EdenEast/nightfox.nvim',
+    lazy = true,
+  },
+  {
+    'folke/tokyonight.nvim',
+    lazy = true,
+  },
   {
     'rebelot/kanagawa.nvim',
-    config = function()
-      vim.cmd('silent! colorscheme kanagawa')
-    end,
+    lazy = true,
   },
 
   'kyazdani42/nvim-web-devicons',
