@@ -108,10 +108,10 @@ require('lazy').setup({
     end,
   },
   { 'saadparwaiz1/cmp_luasnip', dependencies = 'LuaSnip' },
-  { 'hrsh7th/cmp-nvim-lsp', after = 'cmp_luasnip' },
-  { 'hrsh7th/cmp-buffer', after = 'cmp-nvim-lsp' },
-  { 'hrsh7th/cmp-nvim-lua', after = 'cmp-buffer' },
-  { 'hrsh7th/cmp-path', after = 'cmp-nvim-lua' },
+  { 'hrsh7th/cmp-nvim-lsp',     after = 'cmp_luasnip' },
+  { 'hrsh7th/cmp-buffer',       after = 'cmp-nvim-lsp' },
+  { 'hrsh7th/cmp-nvim-lua',     after = 'cmp-buffer' },
+  { 'hrsh7th/cmp-path',         after = 'cmp-nvim-lua' },
 
   {
     'windwp/nvim-autopairs',
@@ -135,6 +135,7 @@ require('lazy').setup({
   {
     'folke/tokyonight.nvim',
     lazy = true,
+    opts = { style = 'moon' },
   },
   {
     'rebelot/kanagawa.nvim',
@@ -200,6 +201,7 @@ require('lazy').setup({
       require('peterhpchen.plugins.configs.gitsigns')
     end,
   },
+  'tpope/vim-fugitive',
 
   -- key binding sheet
   {
