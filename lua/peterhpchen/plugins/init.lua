@@ -40,12 +40,6 @@ require('lazy').setup({
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
   {
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
-    config = function()
-      require('peterhpchen.plugins.configs.mason-tool-installer')
-    end,
-  },
-  {
     'neovim/nvim-lspconfig',
     dependencies = {
       'mason.nvim',
@@ -61,8 +55,13 @@ require('lazy').setup({
     end,
   },
   {
-    'jose-elias-alvarez/null-ls.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    'jay-babu/mason-null-ls.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'williamboman/mason.nvim',
+      'jose-elias-alvarez/null-ls.nvim',
+    },
     config = function()
       require('peterhpchen.plugins.configs.null-ls')
     end,
@@ -108,10 +107,10 @@ require('lazy').setup({
     end,
   },
   { 'saadparwaiz1/cmp_luasnip', dependencies = 'LuaSnip' },
-  { 'hrsh7th/cmp-nvim-lsp',     after = 'cmp_luasnip' },
-  { 'hrsh7th/cmp-buffer',       after = 'cmp-nvim-lsp' },
-  { 'hrsh7th/cmp-nvim-lua',     after = 'cmp-buffer' },
-  { 'hrsh7th/cmp-path',         after = 'cmp-nvim-lua' },
+  { 'hrsh7th/cmp-nvim-lsp', after = 'cmp_luasnip' },
+  { 'hrsh7th/cmp-buffer', after = 'cmp-nvim-lsp' },
+  { 'hrsh7th/cmp-nvim-lua', after = 'cmp-buffer' },
+  { 'hrsh7th/cmp-path', after = 'cmp-nvim-lua' },
 
   {
     'windwp/nvim-autopairs',

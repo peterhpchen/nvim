@@ -4,28 +4,42 @@ if not null_ls_ok then
   return
 end
 
+local mason_null_ls_ok, mason_null_ls = pcall(require, 'mason-null-ls')
+
+if not mason_null_ls_ok then
+  return
+end
+
+mason_null_ls.setup({
+  ensure_installed = {
+    -- sh
+    'shellcheck',
+    'shfmt',
+
+    -- dockerfile
+    'hadolint',
+
+    -- javascript
+    'prettierd',
+    'eslint_d',
+
+    -- python
+    'black',
+    'isort',
+
+    -- lua
+    'stylua',
+  },
+  automatic_installation = false,
+  automatic_setup = true,
+})
+
 null_ls.setup({
   on_attach = require('peterhpchen.lsp.on_attach'),
   sources = {
-    -- Dockerfile
-    null_ls.builtins.diagnostics.hadolint,
-
-    -- Shell
-    null_ls.builtins.code_actions.shellcheck,
-    null_ls.builtins.diagnostics.shellcheck,
-    null_ls.builtins.formatting.shfmt,
-
-    -- Lua
-    null_ls.builtins.formatting.stylua,
-
-    -- Python
-    null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.isort,
-
-    -- JavaScript
-    null_ls.builtins.formatting.prettierd,
-
     -- Git
     null_ls.builtins.code_actions.gitsigns,
   },
 })
+
+require('mason-null-ls').setup_handlers() -- If `automatic_setup` is true.
