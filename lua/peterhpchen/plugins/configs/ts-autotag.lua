@@ -1,7 +1,7 @@
-local present1, autotag = pcall(require, 'nvim-autotag')
+local autotag_ok, autotag = pcall(require, 'nvim-autotag')
 
-if not present1 then
+if not autotag_ok then
   return
 end
 
-autotag.setup({})
+autotag.setup()
