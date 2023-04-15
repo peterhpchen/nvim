@@ -80,15 +80,6 @@ require('lazy').setup({
     end,
   },
 
-  -- Rust
-  {
-    'simrat39/rust-tools.nvim',
-    dependencies = 'nvim-lspconfig',
-    config = function()
-      require('peterhpchen.plugins.configs.rust-tools')
-    end,
-  },
-
   -- completion and snippet
   'rafamadriz/friendly-snippets',
   'onsails/lspkind.nvim',
@@ -143,14 +134,6 @@ require('lazy').setup({
 
   'kyazdani42/nvim-web-devicons',
 
-  -- start page
-  {
-    'goolord/alpha-nvim',
-    config = function()
-      require('peterhpchen.plugins.configs.alpha')
-    end,
-  },
-
   -- sidebar
   {
     'kyazdani42/nvim-tree.lua',
@@ -202,22 +185,6 @@ require('lazy').setup({
   },
   'tpope/vim-fugitive',
 
-  -- key binding sheet
-  {
-    'folke/which-key.nvim',
-    config = function()
-      require('peterhpchen.plugins.configs.which-key')
-    end,
-  },
-
-  {
-    'folke/trouble.nvim',
-    dependencies = 'kyazdani42/nvim-web-devicons',
-    config = function()
-      require('peterhpchen.plugins.configs.trouble')
-    end,
-  },
-
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
@@ -229,14 +196,6 @@ require('lazy').setup({
     'norcalli/nvim-colorizer.lua',
     config = function()
       require('peterhpchen.plugins.configs.colorizer')
-    end,
-  },
-
-  {
-    'akinsho/toggleterm.nvim',
-    version = '*',
-    config = function()
-      require('peterhpchen.plugins.configs.toggleterm')
     end,
   },
 
