@@ -134,14 +134,6 @@ require('lazy').setup({
 
   'kyazdani42/nvim-web-devicons',
 
-  -- sidebar
-  {
-    'kyazdani42/nvim-tree.lua',
-    config = function()
-      require('peterhpchen.plugins.configs.nvim-tree')
-    end,
-  },
-
   -- status bar
   {
     'nvim-lualine/lualine.nvim',
@@ -167,10 +159,8 @@ require('lazy').setup({
 
   -- finder
   {
-    'nvim-telescope/telescope.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
+    'nvim-telescope/telescope-file-browser.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
     config = function()
       require('peterhpchen.plugins.configs.telescope')
     end,
