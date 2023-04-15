@@ -17,7 +17,6 @@ treesitter.setup({
     'markdown',
     'markdown_inline',
     'python',
-    'rust',
     'toml',
     'tsx',
     'typescript',
