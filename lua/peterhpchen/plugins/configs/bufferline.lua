@@ -11,6 +11,3 @@ bufferline.setup({
     offsets = {},
   },
 })
-
-vim.keymap.set('n', '<TAB>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })

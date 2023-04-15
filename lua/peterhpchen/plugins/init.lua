@@ -247,12 +247,7 @@ require('lazy').setup({
     end,
   },
 
-  {
-    'mbbill/undotree',
-    config = function()
-      require('peterhpchen.plugins.configs.undotree')
-    end,
-  },
+  'mbbill/undotree',
 
   'github/copilot.vim',
 })

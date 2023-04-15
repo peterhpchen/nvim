@@ -21,5 +21,3 @@ nvim_tree.setup({
     custom = { '^.git$' },
   },
 })
-
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
