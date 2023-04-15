@@ -6,7 +6,6 @@ end
 
 nvim_tree.setup({
   disable_netrw = true,
-  open_on_setup = false,
   actions = {
     open_file = {
       quit_on_open = true,

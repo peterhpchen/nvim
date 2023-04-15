@@ -32,6 +32,7 @@ mason_null_ls.setup({
   },
   automatic_installation = false,
   automatic_setup = true,
+  handlers = {},
 })
 
 null_ls.setup({
@@ -41,5 +42,3 @@ null_ls.setup({
     null_ls.builtins.code_actions.gitsigns,
   },
 })
-
-require('mason-null-ls').setup_handlers() -- If `automatic_setup` is true.
