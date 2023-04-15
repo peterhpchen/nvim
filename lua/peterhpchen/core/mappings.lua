@@ -16,6 +16,3 @@ keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>', { desc = 'toggle trouble
 keymap.set('n', '<leader>ff', '<cmd> Telescope find_files <CR>', { desc = 'find file' })
 keymap.set('n', '<leader>fw', '<cmd> Telescope live_grep <CR>', { desc = 'find content' })
 keymap.set('n', '<leader>fh', '<cmd> Telescope help_tags <CR>', { desc = 'find help' })
-
--- nvimtree
-keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { desc = 'toggle tree' })
