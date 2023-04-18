@@ -6,7 +6,7 @@ end
 
 telescope.setup({
   defaults = {
-    layout_strategy = 'flex',
+    layout_strategy = 'vertical',
   },
   extensions = {
     file_browser = {
