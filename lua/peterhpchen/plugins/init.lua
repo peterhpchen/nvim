@@ -199,4 +199,6 @@ require('lazy').setup({
   'mbbill/undotree',
 
   'github/copilot.vim',
+
+  'metakirby5/codi.vim',
 })
