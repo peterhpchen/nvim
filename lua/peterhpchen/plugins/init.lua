@@ -201,4 +201,11 @@ require('lazy').setup({
   'github/copilot.vim',
 
   'metakirby5/codi.vim',
+
+  {
+    'vimwiki/vimwiki',
+    init = function()
+      require('peterhpchen.plugins.configs.vimwiki')
+    end,
+  },
 })
