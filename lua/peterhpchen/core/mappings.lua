@@ -1,6 +1,7 @@
 local keymap = vim.keymap
 
 keymap.set('n', '<Leader>x', ':bd<CR>', { desc = 'close buffer' })
+keymap.set('n', '<Leader>xa', ':%bd|e#<CR>', { desc = 'close all buffers' })
 
 -- undotree
 keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'toggle undotree panel' })
