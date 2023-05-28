@@ -28,11 +28,11 @@ fi
 
 git clone --quiet "$REMOTE" "$NVIM_CONFIG_DIR"
 
-if [ ! -d "$XDG_DATA_HOME/nvim/site/pack/packer/start/packer.nvim" ]; then
-  echo "packer.nvim not installed. Installing."
-  git clone --depth 1 https://github.com/wbthomason/packer.nvim "$XDG_DATA_HOME/nvim/site/pack/packer/start/packer.nvim"
+if [ ! -d "$XDG_DATA_HOME/nvim/lazy/lazy.nvim" ]; then
+  echo "lazy.nvim not installed. Installing."
+  git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable "$XDG_DATA_HOME/nvim/lazy/lazy.nvim"
 fi
 
-echo "packer.nvim setup."
-nvim --headless -c "autocmd User PackerComplete quitall" -c "PackerSync"
+echo "lazy.nvim setup."
+nvim --headless "+Lazy! sync" +qa
 nvim --headless -c 'autocmd User MasonToolsUpdateCompleted quitall' -c 'MasonToolsUpdate'
