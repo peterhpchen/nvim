@@ -6,6 +6,27 @@ end
 
 mason_tool_installer.setup({
   ensure_installed = {
+    -- vue
+    'vue-language-server',
+    -- typescript
+    'typescript-language-server',
+    -- css
+    'tailwindcss-language-server',
+    -- python
+    'pyright',
+    -- lua
+    'lua-language-server',
+    -- json
+    'json-lsp',
+    -- js, jsx, ts, tsx
+    'eslint-lsp',
+    -- dockerfile
+    'dockerfile-language-server',
+    -- bash
+    'bash-language-server',
+    -- astro
+    'astro-language-server',
+
     -- sh
     'shellcheck',
     'shfmt',
