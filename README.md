@@ -46,6 +46,15 @@ My personal Neovim configuration.
 - `codi.vim`
 - `vimwiki`
 
+## Try it in the docker container
+
+I write a `Dockerfile` to build a docker image for this nvim config. You can try it by:
+
+```sh
+cd .scripts/docker
+. ./run.sh
+```
+
 ## Installation
 
 Install this config by the below command:

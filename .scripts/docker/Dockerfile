@@ -14,8 +14,6 @@ RUN pacman -S --noconfirm --quiet unzip ripgrep fd
 
 RUN pacman -S --noconfirm --quiet git
 
-RUN git clone https://github.com/peterhpchen/nvim.git $XDG_CONFIG_HOME/nvim
-
 RUN touch /root/.bashrc
 RUN touch /root/.bash_profile
 
@@ -46,9 +44,7 @@ RUN source /root/.bashrc && pyenv install $PYTHON_VERSION && pyenv global "$PYTH
 
 # Neovim
 RUN pacman -S --noconfirm --quiet neovim
-RUN sudo -u ab -D~ bash -c 'yay -S --noconfirm --quiet nvim-packer-git'
-RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-RUN nvim --headless -c 'autocmd User MasonToolsUpdateCompleted quitall' -c 'MasonToolsUpdate'
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/peterhpchen/nvim/main/.scripts/install.sh)"
 
 WORKDIR /root/workspace
 ENTRYPOINT ["/bin/bash", "-l", "-c"]
