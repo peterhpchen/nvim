@@ -16,9 +16,11 @@ if [ ! "$(command -v nvim)" ]; then
   exit 1
 fi
 
-if [ ! "$(command -v im-select)" ]; then
-  echo "Please install im-select first."
-  exit 1
+if [ "$(uname)" = "Darwin" ]; then
+  if [ ! "$(command -v im-select)" ]; then
+    echo "Please install im-select first."
+    exit 1
+  fi
 fi
 
 if [ -d "$NVIM_CONFIG_DIR" ]; then
