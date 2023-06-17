@@ -4,7 +4,11 @@ if not lspsaga_ok then
   return
 end
 
-saga.setup({})
+saga.setup({
+  lightbulb = {
+    sign = false,
+  },
+})
 
 local keymap = vim.keymap.set
 

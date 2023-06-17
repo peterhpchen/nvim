@@ -138,7 +138,7 @@ require('lazy').setup({
     lazy = true,
   },
 
-  'kyazdani42/nvim-web-devicons',
+  'nvim-tree/nvim-web-devicons',
 
   -- status bar
   {
