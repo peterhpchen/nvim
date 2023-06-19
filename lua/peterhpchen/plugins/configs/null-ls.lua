@@ -40,5 +40,9 @@ null_ls.setup({
   sources = {
     -- Git
     null_ls.builtins.code_actions.gitsigns,
+
+    null_ls.builtins.formatting.prettierd.with({
+      extra_filetypes = { 'astro' },
+    }),
   },
 })
