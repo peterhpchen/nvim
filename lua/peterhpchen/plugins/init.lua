@@ -20,7 +20,12 @@ require('lazy').setup({
       require('peterhpchen.plugins.configs.treesitter')
     end,
   },
-  'JoosepAlviste/nvim-ts-context-commentstring',
+  {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    config = function()
+      require('peterhpchen.plugins.configs.ts-context-commentstring')
+    end,
+  },
 
   -- Lua
   'folke/neodev.nvim',
@@ -184,6 +189,7 @@ require('lazy').setup({
 
   {
     'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
     config = function()
       require('peterhpchen.plugins.configs.indent-blankline')
     end,
