@@ -78,11 +78,14 @@ require('lazy').setup({
     end,
   },
   {
-    'glepnir/lspsaga.nvim',
-    dependencies = 'nvim-lspconfig',
+    'nvimdev/lspsaga.nvim',
     config = function()
       require('peterhpchen.plugins.configs.lspsaga')
     end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
+    },
   },
   {
     'j-hui/fidget.nvim',
