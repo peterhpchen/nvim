@@ -33,7 +33,6 @@ My personal Neovim configuration.
 - `kanagawa.nvim`
 - `nvim-web-devicons`
 - `lualine.nvim`
-- `bufferline.nvim`
 - `Comment.nvim`
 - `telescope-file-browser.nvim`
 - `gitsigns.nvim`

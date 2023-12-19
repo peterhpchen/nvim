@@ -6,10 +6,6 @@ keymap.set('n', '<Leader>xa', ':%bd|e#<CR>', { desc = 'close all buffers' })
 -- undotree
 keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'toggle undotree panel' })
 
--- bufferline
-keymap.set('n', '<TAB>', ':BufferLineCycleNext<CR>', { desc = 'next buffer' })
-keymap.set('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', { desc = 'prev buffer' })
-
 -- trouble
 keymap.set('n', '<leader>xx', '<cmd>TroubleToggle<cr>', { desc = 'toggle trouble list' })
 

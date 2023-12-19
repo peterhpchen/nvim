@@ -157,14 +157,6 @@ require('lazy').setup({
     end,
   },
 
-  -- tab bar
-  {
-    'akinsho/bufferline.nvim',
-    config = function()
-      require('peterhpchen.plugins.configs.bufferline')
-    end,
-  },
-
   {
     'numToStr/Comment.nvim',
     config = function()
