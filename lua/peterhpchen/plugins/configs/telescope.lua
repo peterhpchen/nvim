@@ -4,6 +4,8 @@ if not present then
   return
 end
 
+local builtin = require('telescope.builtin')
+
 telescope.setup({
   defaults = {
     layout_strategy = 'vertical',
@@ -38,3 +40,8 @@ vim.keymap.set('n', '<C-n>', function()
     previewer = false,
   })
 end, { desc = 'open file browser' })
+
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'find file' })
+vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'find content' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'find buffer' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'find help' })
