@@ -24,3 +24,7 @@ vim.opt.mouse = nil
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
+
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldenable = false
