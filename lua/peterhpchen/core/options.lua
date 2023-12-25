@@ -1,9 +1,12 @@
 vim.g.mapleader = ';'
 
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
 vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 999
 vim.opt.signcolumn = 'yes'
 
 vim.opt.ignorecase = true

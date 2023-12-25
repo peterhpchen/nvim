@@ -8,6 +8,9 @@ saga.setup({
   lightbulb = {
     sign = false,
   },
+  code_action = {
+    extend_gitsigns = true,
+  },
 })
 
 local keymap = vim.keymap.set

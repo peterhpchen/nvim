@@ -14,10 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   {
     'nvim-treesitter/nvim-treesitter',
-    version = false, -- last release is way too old and doesn't work on Windows
-    build = ':TSUpdate',
-    config = function()
-      require('peterhpchen.plugins.configs.treesitter')
+    build = function()
+      require('peterhpchen.plugins.configs.treesitter').update({ with_sync = true })()
     end,
   },
   {
@@ -89,7 +87,6 @@ require('lazy').setup({
   },
   {
     'j-hui/fidget.nvim',
-    tag = 'legacy',
     config = function()
       require('peterhpchen.plugins.configs.fidget')
     end,
