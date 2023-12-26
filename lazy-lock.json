@@ -8,6 +8,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "codi.vim": { "branch": "master", "commit": "83b9859aaf8066d95892e01eb9c01571a4b325dd" },
   "copilot.vim": { "branch": "release", "commit": "5b19fb001d7f31c4c7c5556d7a97b243bd29f45f" },
+  "efmls-configs-nvim": { "branch": "main", "commit": "ff84e0402907f9557778bd6cb32f9d5b1552ffaf" },
   "fidget.nvim": { "branch": "main", "commit": "eb9fccf7fda8b641814f31d47926202f229980b3" },
   "friendly-snippets": { "branch": "main", "commit": "53d3df271d031c405255e99410628c26a8f0d2b0" },
   "gitsigns.nvim": { "branch": "main", "commit": "d195f0c35ced5174d3ecce1c4c8ebb3b5bc23fa9" },

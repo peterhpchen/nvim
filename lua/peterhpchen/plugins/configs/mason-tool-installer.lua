@@ -36,7 +36,7 @@ mason_tool_installer.setup({
 
     -- javascript
     'prettierd',
-    'eslint_d',
+    -- 'eslint_d',
 
     -- python
     'black',
@@ -44,5 +44,8 @@ mason_tool_installer.setup({
 
     -- lua
     'stylua',
+
+    -- efm (general purpose language server)
+    'efm',
   },
 })

@@ -20,8 +20,8 @@ mason_null_ls.setup({
     'hadolint',
 
     -- javascript
-    'prettierd',
-    'eslint_d',
+    -- 'prettierd',
+    -- 'eslint_d',
 
     -- python
     'black',
@@ -31,15 +31,17 @@ mason_null_ls.setup({
     'stylua',
   },
   automatic_installation = false,
-  automatic_setup = true,
-  handlers = {},
+  handlers = {
+    prettierd = function(source_name, methods) end,
+    eslint_d = function(source_name, methods) end,
+  },
 })
 
 null_ls.setup({
   on_attach = require('peterhpchen.lsp.on_attach'),
-  sources = {
-    null_ls.builtins.formatting.prettierd.with({
-      extra_filetypes = { 'astro' },
-    }),
-  },
+  -- sources = {
+  --   null_ls.builtins.formatting.prettierd.with({
+  --     extra_filetypes = { 'astro' },
+  --   }),
+  -- },
 })

@@ -76,6 +76,11 @@ require('lazy').setup({
     end,
   },
   {
+    'creativenull/efmls-configs-nvim',
+    version = 'v1.x.x',
+    dependencies = { 'neovim/nvim-lspconfig' },
+  },
+  {
     'nvimdev/lspsaga.nvim',
     config = function()
       require('peterhpchen.plugins.configs.lspsaga')

@@ -44,6 +44,21 @@ My personal Neovim configuration.
 - `copilot.vim`
 - `codi.vim`
 - `vimwiki`
+- `efmls-configs-nvim`
+
+## My LSP Settings
+
+### .js, .jsx
+
+- formatter: prettierd
+
+### .ts, .tsx
+
+- formatter: prettierd
+
+### .md
+
+- formatter: prettierd
 
 ## Try it in the docker container
 
