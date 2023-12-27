@@ -19,7 +19,7 @@ mason_null_ls.setup({
     -- dockerfile
     'hadolint',
 
-    -- javascript
+    -- -- javascript
     -- 'prettierd',
     -- 'eslint_d',
 
@@ -27,13 +27,14 @@ mason_null_ls.setup({
     'black',
     'isort',
 
-    -- lua
-    'stylua',
+    -- -- lua
+    -- 'stylua',
   },
   automatic_installation = false,
   handlers = {
     prettierd = function(source_name, methods) end,
     eslint_d = function(source_name, methods) end,
+    stylua = function(source_name, methods) end,
   },
 })
 

@@ -4,20 +4,12 @@ if not lspconfig_ok then
   return
 end
 
-local server_config = {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' },
-      },
-    },
-  },
-}
-
 local neodev_ok, neodev = pcall(require, 'neodev')
 
 if neodev_ok then
   neodev.setup({})
 end
 
-lspconfig.lua_ls.setup(server_config)
+lspconfig.lua_ls.setup({
+  on_attach = require('peterhpchen.lsp.on_attach'),
+})
