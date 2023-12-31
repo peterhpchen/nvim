@@ -10,12 +10,19 @@ if not prettier_d_ok then
   return
 end
 
+local stylua_ok, stylua = pcall(require, 'efmls-configs.formatters.stylua')
+
+if not stylua_ok then
+  return
+end
+
 local languages = {
   javascript = { prettier_d },
   javascriptreact = { prettier_d },
   typescript = { prettier_d },
   typescriptreact = { prettier_d },
   markdown = { prettier_d },
+  lua = { stylua },
 }
 
 local efmls_config = {

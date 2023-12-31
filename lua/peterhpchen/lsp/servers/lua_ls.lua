@@ -10,6 +10,4 @@ if neodev_ok then
   neodev.setup({})
 end
 
-lspconfig.lua_ls.setup({
-  on_attach = require('peterhpchen.lsp.on_attach'),
-})
+lspconfig.lua_ls.setup({})
