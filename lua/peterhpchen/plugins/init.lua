@@ -64,18 +64,6 @@ require('lazy').setup({
         end,
     },
     {
-        'jay-babu/mason-null-ls.nvim',
-        event = { 'BufReadPre', 'BufNewFile' },
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'williamboman/mason.nvim',
-            'jose-elias-alvarez/null-ls.nvim',
-        },
-        config = function()
-            require('peterhpchen.plugins.configs.null-ls')
-        end,
-    },
-    {
         'creativenull/efmls-configs-nvim',
         version = 'v1.x.x',
         dependencies = { 'neovim/nvim-lspconfig' },

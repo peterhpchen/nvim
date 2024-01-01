@@ -11,9 +11,7 @@ My personal Neovim configuration.
 - `schemastore.nvim`
 - `mason.nvim`
 - `mason-lspconfig.nvim`
-- `mason-null-ls.nvim`
 - `plenary.nvim`
-- `null-ls.nvim`
 - `nvim-lspconfig`
 - `cmp-nvim-lsp`
 - `lspsaga.nvim`
@@ -59,6 +57,23 @@ My personal Neovim configuration.
 ### .md
 
 - formatter: prettierd
+
+### .lua
+
+- formatter: stylua
+
+### .sh
+
+- linter: shellcheck
+- formatter: shfmt
+
+### Dockerfile
+
+- linter: hadolint
+
+### Python
+
+- formatter: black, isort
 
 ## Try it in the docker container
 
