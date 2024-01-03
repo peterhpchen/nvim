@@ -42,10 +42,13 @@ mason_tool_installer.setup({
     'black',
     'isort',
 
-    -- -- lua
-    -- 'stylua',
+    -- lua
+    'stylua',
 
     -- efm (general purpose language server)
     'efm',
+
+    -- spell
+    'cspell',
   },
 })

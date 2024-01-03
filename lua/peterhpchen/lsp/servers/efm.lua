@@ -54,12 +54,19 @@ if not isort_ok then
   return
 end
 
+local cspell_ok, cspell = pcall(require, 'efmls-configs.linters.cspell')
+
+if not cspell_ok then
+  print('require cspell error')
+  return
+end
+
 local languages = {
   javascript = { prettier_d },
   javascriptreact = { prettier_d },
   typescript = { prettier_d },
   typescriptreact = { prettier_d },
-  markdown = { prettier_d },
+  markdown = { prettier_d, cspell },
   lua = { stylua },
   sh = { shellcheck, shfmt },
   docker = { hadolint },
