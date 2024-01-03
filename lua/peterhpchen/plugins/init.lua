@@ -127,6 +127,15 @@ require('lazy').setup({
 
   -- colorscheme
   {
+    'gbprod/nord.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('nord').setup({})
+      vim.cmd.colorscheme('nord')
+    end,
+  },
+  {
     'EdenEast/nightfox.nvim',
     lazy = true,
   },
@@ -158,6 +167,11 @@ require('lazy').setup({
   },
 
   -- finder
+  {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
   {
     'nvim-telescope/telescope-file-browser.nvim',
     dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
