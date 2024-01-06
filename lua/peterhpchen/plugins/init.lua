@@ -90,10 +90,9 @@ require('lazy').setup({
 
   -- completion and snippet
   'rafamadriz/friendly-snippets',
-  'onsails/lspkind.nvim',
   {
     'hrsh7th/nvim-cmp',
-    dependencies = { 'friendly-snippets', 'lspkind.nvim' },
+    dependencies = { 'friendly-snippets' },
     config = function()
       require('peterhpchen.plugins.configs.cmp')
     end,

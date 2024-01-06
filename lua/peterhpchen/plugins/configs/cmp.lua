@@ -13,11 +13,6 @@ end
 vim.opt.completeopt = 'menu,menuone,noselect'
 
 cmp.setup({
-  formatting = {
-    format = lspkind.cmp_format({
-      mode = 'symbol_text',
-    }),
-  },
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
