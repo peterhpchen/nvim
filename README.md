@@ -17,7 +17,6 @@ My personal Neovim configuration.
 - `lspsaga.nvim`
 - `fidget.nvim`
 - `friendly-snippets`
-- `lspkind.nvim`
 - `nvim-cmp`
 - `LuaSnip`
 - `cmp_luasnip`

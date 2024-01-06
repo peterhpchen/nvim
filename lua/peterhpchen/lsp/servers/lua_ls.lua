@@ -6,8 +6,18 @@ end
 
 local neodev_ok, neodev = pcall(require, 'neodev')
 
-if neodev_ok then
-  neodev.setup({})
+if not neodev_ok then
+  return
 end
 
-lspconfig.lua_ls.setup({})
+neodev.setup({})
+
+lspconfig.lua_ls.setup({
+  settings = {
+    Lua = {
+      completion = {
+        callSnippet = 'Replace',
+      },
+    },
+  },
+})

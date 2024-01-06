@@ -1,12 +1,6 @@
-local present1, cmp = pcall(require, 'cmp')
+local present, cmp = pcall(require, 'cmp')
 
-if not present1 then
-  return
-end
-
-local present2, lspkind = pcall(require, 'lspkind')
-
-if not present2 then
+if not present then
   return
 end
 

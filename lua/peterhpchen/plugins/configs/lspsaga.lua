@@ -4,12 +4,23 @@ if not lspsaga_ok then
   return
 end
 
+local max_height = 0.4 -- Because `vim.opt.scrolloff = 999`
+
 saga.setup({
   lightbulb = {
     sign = false,
   },
   code_action = {
     extend_gitsigns = true,
+  },
+  hover = {
+    max_height = max_height,
+  },
+  finder = {
+    max_height = max_height,
+  },
+  diagnostic = {
+    max_height = max_height,
   },
 })
 
