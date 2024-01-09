@@ -4,6 +4,21 @@ My personal Neovim configuration.
 
 ## Plugins
 
+### Snippets
+
+- `LuaSnip`
+
+  - [Source] `friendly-snippets`
+
+### Auto Completion
+
+- `nvim-cmp`
+
+  - [Source] `cmp-nvim-lsp`
+  - [Source] `cmp_luasnip`
+  - [Source] `cmp-path`
+  - [Source] `cmp-buffer`
+
 - `lazy.nvim`
 - `nvim-treesitter`
 - `nvim-ts-context-commentstring`
@@ -13,16 +28,8 @@ My personal Neovim configuration.
 - `mason-lspconfig.nvim`
 - `plenary.nvim`
 - `nvim-lspconfig`
-- `cmp-nvim-lsp`
 - `lspsaga.nvim`
 - `fidget.nvim`
-- `friendly-snippets`
-- `nvim-cmp`
-- `LuaSnip`
-- `cmp_luasnip`
-- `cmp-buffer`
-- `cmp-nvim-lua`
-- `cmp-path`
 - `nvim-autopairs`
 - `nvim-ts-autotag`
 - `nightfox.nvim`

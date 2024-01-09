@@ -88,27 +88,33 @@ require('lazy').setup({
     end,
   },
 
-  -- completion and snippet
-  'rafamadriz/friendly-snippets',
-  {
-    'hrsh7th/nvim-cmp',
-    dependencies = { 'friendly-snippets' },
-    config = function()
-      require('peterhpchen.plugins.configs.cmp')
-    end,
-  },
+  -- snippets
   {
     'L3MON4D3/LuaSnip',
-    dependencies = 'nvim-cmp',
+    -- follow latest release.
+    version = 'v2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = 'make install_jsregexp',
+
+    dependencies = { 'rafamadriz/friendly-snippets' },
     config = function()
       require('peterhpchen.plugins.configs.luasnip')
     end,
   },
-  { 'saadparwaiz1/cmp_luasnip', dependencies = 'LuaSnip' },
-  { 'hrsh7th/cmp-nvim-lsp', after = 'cmp_luasnip' },
-  { 'hrsh7th/cmp-buffer', after = 'cmp-nvim-lsp' },
-  { 'hrsh7th/cmp-nvim-lua', after = 'cmp-buffer' },
-  { 'hrsh7th/cmp-path', after = 'cmp-nvim-lua' },
+
+  -- auto completion
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+    },
+    config = function()
+      require('peterhpchen.plugins.configs.cmp')
+    end,
+  },
 
   {
     'windwp/nvim-autopairs',

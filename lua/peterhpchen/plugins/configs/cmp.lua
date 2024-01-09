@@ -13,19 +13,21 @@ cmp.setup({
     end,
   },
   mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-s>'] = cmp.mapping.complete(), -- open snippet drop down list
+
+    ['<C-n>'] = cmp.mapping.select_next_item(), -- same with telescope
+    ['<C-p>'] = cmp.mapping.select_prev_item(), -- same with telescope
+    ['<C-u>'] = cmp.mapping.scroll_docs(4), -- same with telescope
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4), -- same with telescope
+    ['<C-c>'] = cmp.mapping.close(), -- same with telescope
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- same with telescope
   },
-  sources = {
-    { name = 'luasnip' },
+  sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'buffer' },
-    { name = 'nvim_lua' },
+    { name = 'luasnip' },
     { name = 'path' },
-  },
+  }, {
+    -- fallback
+    { name = 'buffer' },
+  }),
 })
