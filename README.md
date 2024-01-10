@@ -4,40 +4,62 @@ My personal Neovim configuration.
 
 ## Plugins
 
+### Plugin Manager
+
+- `folke/lazy.nvim`
+
+### Color Scheme
+
+- (Default) `gbprod/nord.nvim`
+- `EdenEast/nightfox.nvim`
+- `folke/tokyonight.nvim`
+- `rebelot/kanagawa.nvim`
+
+### Treesitter
+
+- `nvim-treesitter/nvim-treesitter`
+
+  - [Config][`commentstring`] `JoosepAlviste/nvim-ts-context-commentstring`
+
+### LSP
+
+- `neovim/nvim-lspconfig`
+
+  - [Source][`jsonls`] `b0o/schemastore.nvim`
+  - [Config][`lua_ls`] `folke/neodev.nvim`
+  - [Config][`efm`] `creativenull/efmls-configs-nvim`
+
 ### Snippets
 
-- `LuaSnip`
+- `L3MON4D3/LuaSnip`
 
-  - [Source] `friendly-snippets`
+  - [Source] `rafamadriz/friendly-snippets`
 
 ### Auto Completion
 
-- `nvim-cmp`
+- `hrsh7th/nvim-cmp`
 
-  - [Source] `cmp-nvim-lsp`
-  - [Source] `cmp_luasnip`
-  - [Source] `cmp-path`
-  - [Source] `cmp-buffer`
+  - [Source] `hrsh7th/cmp-nvim-lsp`
+  - [Source] `saadparwaiz1/cmp_luasnip`
+  - [Source] `hrsh7th/cmp-path`
+  - [Source] `hrsh7th/cmp-buffer`
+  - [Source] `folke/neodev.nvim`
 
-- `lazy.nvim`
-- `nvim-treesitter`
-- `nvim-ts-context-commentstring`
-- `neodev.nvim`
-- `schemastore.nvim`
+### Comment
+
+- `numToStr/Comment.nvim`
+
+  - [Config][Treesitter] `JoosepAlviste/nvim-ts-context-commentstring`
+
 - `mason.nvim`
 - `mason-lspconfig.nvim`
 - `plenary.nvim`
-- `nvim-lspconfig`
 - `lspsaga.nvim`
 - `fidget.nvim`
 - `nvim-autopairs`
 - `nvim-ts-autotag`
-- `nightfox.nvim`
-- `tokyonight.nvim`
-- `kanagawa.nvim`
 - `nvim-web-devicons`
 - `lualine.nvim`
-- `Comment.nvim`
 - `telescope-file-browser.nvim`
 - `gitsigns.nvim`
 - `vim-fugitive`
@@ -48,7 +70,6 @@ My personal Neovim configuration.
 - `copilot.vim`
 - `codi.vim`
 - `vimwiki`
-- `efmls-configs-nvim`
 
 ## My LSP Settings
 

@@ -12,124 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = function()
-      require('nvim-treesitter.install').update({ with_sync = true })()
-    end,
-    config = function()
-      require('peterhpchen.plugins.configs.treesitter')
-    end,
-  },
-  {
-    'JoosepAlviste/nvim-ts-context-commentstring',
-    config = function()
-      require('peterhpchen.plugins.configs.ts-context-commentstring')
-    end,
-  },
-
-  -- Lua
-  'folke/neodev.nvim',
-
-  -- JSON
-  'b0o/schemastore.nvim',
-  -- disable because bug issue https://github.com/vuki656/package-info.nvim/issues/127
-  -- {
-  --   'vuki656/package-info.nvim',
-  --     config = function()
-  --     require('peterhpchen.plugins.configs.package-info')
-  --   end,
-  --   dependencies = 'MunifTanjim/nui.nvim',
-  -- }
-
-  -- LSP
-  'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
-  {
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
-    config = function()
-      require('peterhpchen.plugins.configs.mason-tool-installer')
-    end,
-  },
-  {
-    'neovim/nvim-lspconfig',
-    dependencies = {
-      'mason.nvim',
-      'mason-lspconfig.nvim',
-      'cmp-nvim-lsp',
-      'neodev.nvim',
-      'schemastore.nvim',
-    },
-    config = function()
-      require('peterhpchen.plugins.configs.mason')
-      require('peterhpchen.plugins.configs.mason-lspconfig')
-      require('peterhpchen.plugins.configs.lspconfig')
-    end,
-  },
-  {
-    'creativenull/efmls-configs-nvim',
-    version = 'v1.x.x',
-    dependencies = { 'neovim/nvim-lspconfig' },
-  },
-  {
-    'nvimdev/lspsaga.nvim',
-    config = function()
-      require('peterhpchen.plugins.configs.lspsaga')
-    end,
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-tree/nvim-web-devicons',
-    },
-  },
-  {
-    'j-hui/fidget.nvim',
-    config = function()
-      require('peterhpchen.plugins.configs.fidget')
-    end,
-  },
-
-  -- snippets
-  {
-    'L3MON4D3/LuaSnip',
-    -- follow latest release.
-    version = 'v2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-    -- install jsregexp (optional!).
-    build = 'make install_jsregexp',
-
-    dependencies = { 'rafamadriz/friendly-snippets' },
-    config = function()
-      require('peterhpchen.plugins.configs.luasnip')
-    end,
-  },
-
-  -- auto completion
-  {
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-      'saadparwaiz1/cmp_luasnip',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-    },
-    config = function()
-      require('peterhpchen.plugins.configs.cmp')
-    end,
-  },
-
-  {
-    'windwp/nvim-autopairs',
-    dependencies = 'nvim-cmp',
-    config = function()
-      require('peterhpchen.plugins.configs.autopairs')
-    end,
-  },
-  {
-    'windwp/nvim-ts-autotag',
-    config = function()
-      require('peterhpchen.plugins.configs.ts-autotag')
-    end,
-  },
-
   -- colorscheme
   {
     'gbprod/nord.nvim',
@@ -153,6 +35,143 @@ require('lazy').setup({
     'rebelot/kanagawa.nvim',
     lazy = true,
   },
+  -- colorscheme
+
+  -- treesitter
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = function()
+      require('nvim-treesitter.install').update({ with_sync = true })()
+    end,
+    config = function()
+      require('peterhpchen.plugins.configs.treesitter')
+    end,
+  },
+  {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+    },
+    config = function()
+      require('peterhpchen.plugins.configs.ts-context-commentstring')
+    end,
+  },
+  -- treesitter
+
+  -- LSP
+  -- -- JSON
+  -- disable because bug issue https://github.com/vuki656/package-info.nvim/issues/127
+  -- {
+  --   'vuki656/package-info.nvim',
+  --     config = function()
+  --     require('peterhpchen.plugins.configs.package-info')
+  --   end,
+  --   dependencies = 'MunifTanjim/nui.nvim',
+  -- }
+
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  {
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    config = function()
+      require('peterhpchen.plugins.configs.mason-tool-installer')
+    end,
+  },
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      'mason.nvim',
+      'mason-lspconfig.nvim',
+      'cmp-nvim-lsp',
+      {
+        'folke/neodev.nvim',
+        dependencies = {
+          'hrsh7th/nvim-cmp',
+        },
+      },
+      'b0o/schemastore.nvim',
+      {
+        'creativenull/efmls-configs-nvim',
+        version = 'v1.x.x',
+      },
+    },
+    config = function()
+      require('peterhpchen.plugins.configs.mason')
+      require('peterhpchen.plugins.configs.mason-lspconfig')
+      require('peterhpchen.plugins.configs.lspconfig')
+    end,
+  },
+  {
+    'nvimdev/lspsaga.nvim',
+    config = function()
+      require('peterhpchen.plugins.configs.lspsaga')
+    end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
+    },
+  },
+  {
+    'j-hui/fidget.nvim',
+    config = function()
+      require('peterhpchen.plugins.configs.fidget')
+    end,
+  },
+  -- LSP
+
+  -- snippets
+  {
+    'L3MON4D3/LuaSnip',
+    -- follow latest release.
+    version = 'v2.*', -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = 'make install_jsregexp',
+
+    dependencies = { 'rafamadriz/friendly-snippets' },
+    config = function()
+      require('peterhpchen.plugins.configs.luasnip')
+    end,
+  },
+
+  -- auto completion
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
+    },
+    config = function()
+      require('peterhpchen.plugins.configs.cmp')
+    end,
+  },
+
+  {
+    'windwp/nvim-autopairs',
+    dependencies = 'nvim-cmp',
+    config = function()
+      require('peterhpchen.plugins.configs.autopairs')
+    end,
+  },
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('peterhpchen.plugins.configs.ts-autotag')
+    end,
+  },
+
+  -- comment
+  {
+    'numToStr/Comment.nvim',
+    dependencies = {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+    },
+    config = function()
+      require('peterhpchen.plugins.configs.comment')
+    end,
+  },
+  -- comment
 
   'nvim-tree/nvim-web-devicons',
 
@@ -161,13 +180,6 @@ require('lazy').setup({
     'nvim-lualine/lualine.nvim',
     config = function()
       require('peterhpchen.plugins.configs.lualine')
-    end,
-  },
-
-  {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('peterhpchen.plugins.configs.comment')
     end,
   },
 
