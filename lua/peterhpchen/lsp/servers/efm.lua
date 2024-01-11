@@ -5,7 +5,8 @@ if not lspconfig_ok then
   return
 end
 
-local prettier_d_ok, prettier_d = pcall(require, 'efmls-configs.formatters.prettier_d')
+local prettier_d_ok, prettier_d = pcall(require,
+  'efmls-configs.formatters.prettier_d')
 
 if not prettier_d_ok then
   print('require prettier_d error')
@@ -19,7 +20,8 @@ if not stylua_ok then
   return
 end
 
-local shellcheck_ok, shellcheck = pcall(require, 'efmls-configs.linters.shellcheck')
+local shellcheck_ok, shellcheck = pcall(require,
+  'efmls-configs.linters.shellcheck')
 
 if not shellcheck_ok then
   print('require shellcheck error')
@@ -54,19 +56,22 @@ if not isort_ok then
   return
 end
 
-local cspell_ok, cspell = pcall(require, 'efmls-configs.linters.cspell')
-
-if not cspell_ok then
-  print('require cspell error')
-  return
-end
-
+-- local cspell_ok, cspell = pcall(require, 'efmls-configs.linters.cspell')
+--
+-- if not cspell_ok then
+--   print('require cspell error')
+--   return
+-- end
+--
 local languages = {
   javascript = { prettier_d },
   javascriptreact = { prettier_d },
   typescript = { prettier_d },
   typescriptreact = { prettier_d },
-  markdown = { prettier_d, cspell },
+  markdown = {
+    prettier_d,
+    -- cspell,
+  },
   lua = { stylua },
   sh = { shellcheck, shfmt },
   docker = { hadolint },

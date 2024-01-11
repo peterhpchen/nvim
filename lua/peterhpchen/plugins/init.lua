@@ -58,6 +58,25 @@ require('lazy').setup({
   },
   -- treesitter
 
+  -- package manager
+  {
+    'williamboman/mason.nvim',
+    config = function()
+      require('peterhpchen.plugins.configs.mason')
+    end,
+  },
+  {
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim', -- use lspconfig names instead of Mason names
+    },
+    config = function()
+      require('peterhpchen.plugins.configs.mason-tool-installer')
+    end,
+  },
+  -- package manager
+
   -- LSP
   -- -- JSON
   -- disable because bug issue https://github.com/vuki656/package-info.nvim/issues/127
@@ -68,36 +87,35 @@ require('lazy').setup({
   --   end,
   --   dependencies = 'MunifTanjim/nui.nvim',
   -- }
-
-  'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
   {
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    'williamboman/mason-lspconfig.nvim', -- bridge `mason.nvim` with the `lspconfig` plugin
+    dependencies = {
+      'williamboman/mason.nvim',
+      'neovim/nvim-lspconfig',
+    },
     config = function()
-      require('peterhpchen.plugins.configs.mason-tool-installer')
+      require('peterhpchen.plugins.configs.mason-lspconfig')
     end,
   },
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      'mason.nvim',
-      'mason-lspconfig.nvim',
-      'cmp-nvim-lsp',
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+      'hrsh7th/cmp-nvim-lsp', -- `nvim-cmp` source
       {
-        'folke/neodev.nvim',
+        'folke/neodev.nvim',  -- `lua_ls` config
         dependencies = {
           'hrsh7th/nvim-cmp',
         },
       },
-      'b0o/schemastore.nvim',
+      'b0o/schemastore.nvim',              -- `jsonls` schemas
       {
-        'creativenull/efmls-configs-nvim',
+        'creativenull/efmls-configs-nvim', -- `efm` config
         version = 'v1.x.x',
       },
     },
     config = function()
-      require('peterhpchen.plugins.configs.mason')
-      require('peterhpchen.plugins.configs.mason-lspconfig')
       require('peterhpchen.plugins.configs.lspconfig')
     end,
   },

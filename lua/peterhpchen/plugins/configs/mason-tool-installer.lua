@@ -48,7 +48,7 @@ mason_tool_installer.setup({
     -- efm (general purpose language server)
     'efm',
 
-    -- spell
-    'cspell',
+    -- -- spell
+    -- 'cspell',
   },
 })

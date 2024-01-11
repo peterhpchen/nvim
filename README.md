@@ -8,6 +8,12 @@ My personal Neovim configuration.
 
 - `folke/lazy.nvim`
 
+### Package Manager
+
+- `williamboman/mason.nvim`
+  - `WhoIsSethDaniel/mason-tool-installer.nvim`
+    - [Config][LSP]`williamboman/mason-lspconfig.nvim`
+
 ### Color Scheme
 
 - (Default) `gbprod/nord.nvim`
@@ -25,9 +31,13 @@ My personal Neovim configuration.
 
 - `neovim/nvim-lspconfig`
 
+  - [Config][Package Manager]`williamboman/mason-lspconfig.nvim`
   - [Source][`jsonls`] `b0o/schemastore.nvim`
   - [Config][`lua_ls`] `folke/neodev.nvim`
   - [Config][`efm`] `creativenull/efmls-configs-nvim`
+
+- `nvimdev/lspsaga.nvim`
+- `j-hui/fidget.nvim`
 
 ### Snippets
 
@@ -45,31 +55,40 @@ My personal Neovim configuration.
   - [Source] `hrsh7th/cmp-buffer`
   - [Source] `folke/neodev.nvim`
 
-### Comment
+### Coding
 
 - `numToStr/Comment.nvim`
 
   - [Config][Treesitter] `JoosepAlviste/nvim-ts-context-commentstring`
 
-- `mason.nvim`
-- `mason-lspconfig.nvim`
-- `plenary.nvim`
-- `lspsaga.nvim`
-- `fidget.nvim`
-- `nvim-autopairs`
-- `nvim-ts-autotag`
-- `nvim-web-devicons`
-- `lualine.nvim`
-- `telescope-file-browser.nvim`
-- `gitsigns.nvim`
-- `vim-fugitive`
-- `indent-blankline.nvim`
+- `windwp/nvim-autopairs`
+- `windwp/nvim-ts-autotag`
+- `github/copilot.vim`
+- `metakirby5/codi.vim`
+
+### Git
+
+- `lewis6991/gitsigns.nvim`
+- `tpope/vim-fugitive`
+
+### Finder
+
+- `nvim-telescope/telescope.nvim`
+- `nvim-telescope/telescope-file-browser.nvim`
+
+### UI
+
+- `nvim-lualine/lualine.nvim`
 - `nvim-colorizer.lua`
-- `im-select.nvim`
-- `undotree`
-- `copilot.vim`
-- `codi.vim`
-- `vimwiki`
+- `lukas-reineke/indent-blankline.nvim`
+
+### Misc
+
+- `nvim-lua/plenary.nvim`
+- `nvim-tree/nvim-web-devicons`
+- `keaising/im-select.nvim`
+- `mbbill/undotree`
+- `vimwiki/vimwiki`
 
 ## My LSP Settings
 
