@@ -1,4 +1,4 @@
-vim.g.mapleader = ';'
+vim.g.mapleader = ';' -- Default is '\'
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
