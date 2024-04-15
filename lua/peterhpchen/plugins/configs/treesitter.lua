@@ -26,7 +26,11 @@ treesitter.setup({
   -- install sync for install script
   sync_install = true,
   auto_install = true,
-  highlight = { enable = true },
+  highlight = {
+    enable = true,
+    disable = { 'latex' },
+    additional_vim_regex_highlighting = { 'latex', 'markdown' },
+  },
   autotag = {
     enable = true,
   },
