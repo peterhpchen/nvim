@@ -5,8 +5,7 @@ if not lspconfig_ok then
   return
 end
 
-local prettier_d_ok, prettier_d = pcall(require,
-  'efmls-configs.formatters.prettier_d')
+local prettier_d_ok, prettier_d = pcall(require, 'efmls-configs.formatters.prettier_d')
 
 if not prettier_d_ok then
   print('require prettier_d error')
@@ -20,8 +19,7 @@ if not stylua_ok then
   return
 end
 
-local shellcheck_ok, shellcheck = pcall(require,
-  'efmls-configs.linters.shellcheck')
+local shellcheck_ok, shellcheck = pcall(require, 'efmls-configs.linters.shellcheck')
 
 if not shellcheck_ok then
   print('require shellcheck error')
@@ -72,6 +70,7 @@ local languages = {
     prettier_d,
     -- cspell,
   },
+  html = { prettier_d },
   lua = { stylua },
   sh = { shellcheck, shfmt },
   docker = { hadolint },
