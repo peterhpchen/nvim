@@ -35,7 +35,10 @@ mason_tool_installer.setup({
     'hadolint',
 
     -- javascript
-    'prettierd',
+    -- -- prettier is installed by homebrew
+    -- 'prettier',
+    -- -- don't use prettierd, it doesn't follow the configuration file location rules
+    -- 'prettierd',
     -- 'eslint_d',
 
     -- python

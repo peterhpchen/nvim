@@ -5,12 +5,19 @@ if not lspconfig_ok then
   return
 end
 
-local prettier_d_ok, prettier_d = pcall(require, 'efmls-configs.formatters.prettier_d')
+local prettier_ok, prettier = pcall(require, 'efmls-configs.formatters.prettier')
 
-if not prettier_d_ok then
-  print('require prettier_d error')
+if not prettier_ok then
+  print('require prettier error')
   return
 end
+
+-- local prettier_d_ok, prettier_d = pcall(require, 'efmls-configs.formatters.prettier_d')
+--
+-- if not prettier_d_ok then
+--   print('require prettier_d error')
+--   return
+-- end
 
 local stylua_ok, stylua = pcall(require, 'efmls-configs.formatters.stylua')
 
@@ -62,15 +69,31 @@ end
 -- end
 --
 local languages = {
-  javascript = { prettier_d },
-  javascriptreact = { prettier_d },
-  typescript = { prettier_d },
-  typescriptreact = { prettier_d },
+  javascript = {
+    -- prettier_d
+    prettier,
+  },
+  javascriptreact = {
+    -- prettier_d
+    prettier,
+  },
+  typescript = {
+    -- prettier_d
+    prettier,
+  },
+  typescriptreact = {
+    -- prettier_d
+    prettier,
+  },
   markdown = {
-    prettier_d,
+    -- prettier_d,
+    prettier,
     -- cspell,
   },
-  html = { prettier_d },
+  html = {
+    -- prettier_d
+    prettier,
+  },
   lua = { stylua },
   sh = { shellcheck, shfmt },
   docker = { hadolint },

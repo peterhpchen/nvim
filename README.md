@@ -94,15 +94,15 @@ My personal Neovim configuration.
 
 ### .js, .jsx
 
-- formatter: prettierd
+- formatter: prettier
 
 ### .ts, .tsx
 
-- formatter: prettierd
+- formatter: prettier
 
 ### .md
 
-- formatter: prettierd
+- formatter: prettier
 
 ### .lua
 
