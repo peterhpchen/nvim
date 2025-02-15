@@ -1,0 +1,21 @@
+[
+    {
+        "key": "ctrl+[",
+        "command": "closeReferenceSearch",
+        "when": "inReferenceSearchEditor && !config.editor.stablePeek"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "closeReferenceSearch",
+        "when": "editorTextFocus && referenceSearchVisible && !config.editor.stablePeek || referenceSearchVisible && !config.editor.stablePeek && !inputFocus"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "hideCodeActionWidget",
+        "when": "codeActionMenuVisible"
+    }
+]

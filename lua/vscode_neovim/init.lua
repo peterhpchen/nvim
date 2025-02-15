@@ -1,16 +1,65 @@
--- options
+local vscode_ok, vscode = pcall(require, 'vscode')
+
+if not vscode_ok then
+  return
+end
+
 vim.g.mapleader = ';' -- Default is '\'
 
+-- search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- clipboard
 vim.opt.clipboard = 'unnamed,unnamedplus'
 
-vim.keymap.set("n", "<space>fb", function()
-  require("vscode").action("workbench.view.explorer", { })
-end, {})
+vim.keymap.set('n', '<leader>xa', function()
+  vscode.action('workbench.action.closeOtherEditors', {})
+end, { desc = 'close buffer except current'})
 
-vim.keymap.set("n", "<leader>fg", function()
-  require("vscode").action("workbench.view.search", { })
-end, {})
+vim.keymap.set('n', '<leader>x', function()
+  vscode.action('workbench.action.closeActiveEditor', {})
+end, { desc = 'close buffer'})
 
-vim.keymap.set("n", "<leader>fb", function()
-  require("vscode").action("workbench.action.showAllEditors", { })
-end, {})
+-- telescope.nvim
+-- telescope-file-browser.nvim
+vim.keymap.set('n', '<space>fb', function()
+  vscode.action('workbench.view.explorer', { })
+end, { desc = 'Telescope file_browser'})
+
+vim.keymap.set('n', '<leader>fg', function()
+  vscode.action('workbench.view.search', { })
+end, { desc = 'Telescope live_grep' })
+
+vim.keymap.set('n', '<leader>fb', function()
+  vscode.action('workbench.action.showAllEditors', { })
+end, { desc = 'Telescope buffers'})
+
+-- lspsaga.nvim
+vim.keymap.set('n', 'gh', function()
+  vscode.action('editor.action.goToReferences', { })
+end, { desc = 'Lspsaga finder'})
+
+vim.keymap.set('n', 'gd', function()
+  vscode.action('editor.action.revealDefinition', { })
+end, { desc = 'Lspsaga goto_definition'})
+
+vim.keymap.set({'n', 'v'}, '<leader>ca', function()
+  vscode.action('editor.action.quickFix', { })
+end, { desc = 'Lspsaga code_action'})
+
+vim.keymap.set('n', 'gr', function()
+  vscode.action('eidtor.action.rename', { })
+end, { desc = 'Lspsaga rename'})
+
+vim.keymap.set('n', '[e', function()
+  vscode.action('eidtor.action.marker.prev', { })
+end, { desc = 'Lspsaga diagnostic_jump_prev(partial support)'})
+
+vim.keymap.set('n', ']e', function()
+  vscode.action('eidtor.action.marker.next', { })
+end, { desc = 'Lspsaga diagnostic_jump_next(partial support)'})
+
+vim.keymap.set('n', '<C-[>', function()
+  vscode.action('closeMarkersNavigation', { })
+end, { desc = 'Close marker'})
