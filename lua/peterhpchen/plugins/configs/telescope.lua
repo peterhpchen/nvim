@@ -29,7 +29,7 @@ telescope.setup({
 -- you need to call load_extension, somewhere after setup function:
 require('telescope').load_extension('file_browser')
 
-vim.keymap.set('n', '<C-n>', function()
+vim.keymap.set('n', '<space>fb', function()
   telescope.extensions.file_browser.file_browser({
     path = '%:p:h',
     grouped = true,
