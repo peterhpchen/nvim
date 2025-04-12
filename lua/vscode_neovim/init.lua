@@ -4,14 +4,7 @@ if not vscode_ok then
   return
 end
 
-vim.g.mapleader = ';' -- Default is '\'
-
--- search
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
--- clipboard
-vim.opt.clipboard = 'unnamed,unnamedplus'
+require('simple')
 
 vim.keymap.set('n', '<leader>xa', function()
   vscode.action('workbench.action.closeOtherEditors', {})

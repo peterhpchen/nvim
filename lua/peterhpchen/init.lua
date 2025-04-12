@@ -1,3 +1,4 @@
+require('simple')
 require('peterhpchen.core.options')
 require('peterhpchen.core.autocmds')
 require('peterhpchen.plugins')
