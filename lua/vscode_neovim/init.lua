@@ -42,15 +42,19 @@ vim.keymap.set({'n', 'v'}, '<leader>ca', function()
 end, { desc = 'Lspsaga code_action'})
 
 vim.keymap.set('n', 'gr', function()
-  vscode.action('eidtor.action.rename', { })
+  vscode.action('editor.action.rename', { })
 end, { desc = 'Lspsaga rename'})
 
 vim.keymap.set('n', '[e', function()
-  vscode.action('eidtor.action.marker.prev', { })
+  vscode.action('editor.action.marker.prev', { })
+  vscode.action('closeMarkersNavigation', { })
+  vscode.action('editor.action.showHover', { })
 end, { desc = 'Lspsaga diagnostic_jump_prev(partial support)'})
 
 vim.keymap.set('n', ']e', function()
-  vscode.action('eidtor.action.marker.next', { })
+  vscode.action('editor.action.marker.next', { })
+  vscode.action('closeMarkersNavigation', { })
+  vscode.action('editor.action.showHover', { })
 end, { desc = 'Lspsaga diagnostic_jump_next(partial support)'})
 
 vim.keymap.set('n', '<C-[>', function()
