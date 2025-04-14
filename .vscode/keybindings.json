@@ -10,12 +10,23 @@
         "when": "editorTextFocus && referenceSearchVisible && !config.editor.stablePeek || referenceSearchVisible && !config.editor.stablePeek && !inputFocus"
     },
     {
-        "key": "ctrl+b",
-        "command": "workbench.action.toggleSidebarVisibility"
+        "key": "ctrl+[",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "filesExplorerFocus"
     },
     {
         "key": "ctrl+[",
         "command": "hideCodeActionWidget",
         "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "space f b",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "!inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "extension.multiCommand.openFileAndCloseExplorer",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !explorerResourceReadonly && !inputFocus"
     }
 ]

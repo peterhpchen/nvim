@@ -1,3 +1,14 @@
 {
-    "editor.lineNumbers": "relative"
+    "editor.lineNumbers": "relative",
+    "multiCommand.commands": [
+        {
+            "command": "extension.multiCommand.openFileAndCloseExplorer",
+            "sequence": [
+                "list.select",
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        }
+    ],
+    "workbench.colorTheme": "GitHub Dark High Contrast",
+    "workbench.iconTheme": "vscode-icons",
 }
