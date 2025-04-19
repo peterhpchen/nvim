@@ -1,4 +1,7 @@
 {
+    "[lua]": {
+        "editor.defaultFormatter": "JohnnyMorganz.stylua"
+    },
     "editor.lineNumbers": "relative",
     "multiCommand.commands": [
         {

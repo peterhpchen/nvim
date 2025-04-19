@@ -3,6 +3,9 @@
         "asvetliakov.vscode-neovim",
         "ryuta46.multi-command",
         "github.github-vscode-theme",
-        "vscode-icons-team.vscode-icons"
+        "vscode-icons-team.vscode-icons",
+        "sumneko.lua",
+        "johnnymorganz.stylua",
+        "timonwong.shellcheck"
     ]
 }
