@@ -28,5 +28,20 @@
         "key": "enter",
         "command": "extension.multiCommand.openFileAndCloseExplorer",
         "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !explorerResourceReadonly && !inputFocus"
-    }
+    },
+    {
+        "key": "; f g",
+        "command": "workbench.action.findInFiles",
+        "when": "!inputFocus"
+    },
+    {
+        "key": "; f f",
+        "command": "workbench.action.quickOpen",
+        "when": "!inputFocus"
+    },
+    {
+        "key": "; f b",
+        "command": "workbench.action.showAllEditors",
+        "when": "!inputFocus"
+    },
 ]

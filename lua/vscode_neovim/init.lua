@@ -16,7 +16,7 @@ end, { desc = 'close buffer'})
 
 -- telescope.nvim
 -- telescope-file-browser.nvim
-vim.keymap.set('n', '<space>fb', function()
+vim.keymap.set('n', '<space>ff', function()
   vscode.action('workbench.view.explorer', { })
 end, { desc = 'Telescope file_browser'})
 
