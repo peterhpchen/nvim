@@ -60,3 +60,12 @@ end, { desc = 'Lspsaga diagnostic_jump_next(partial support)'})
 vim.keymap.set('n', '<C-[>', function()
   vscode.action('closeMarkersNavigation', { })
 end, { desc = 'Close marker'})
+
+-- gitsigns.nvim
+vim.keymap.set('n', '[c', function()
+  vscode.action('workbench.action.editor.previousChange', { })
+end, { desc = 'Gitsigns prev_hunk'})
+
+vim.keymap.set('n', ']c', function()
+  vscode.action('workbench.action.editor.nextChange', { })
+end, { desc = 'Gitsigns next_hunk'})
