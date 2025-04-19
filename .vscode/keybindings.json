@@ -44,4 +44,29 @@
         "command": "workbench.action.showAllEditors",
         "when": "!inputFocus"
     },
+    {
+        "key": "ctrl+[",
+        "command": "search.focus.nextInputBox",
+        "when": "searchInputBoxFocus"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "searchViewletFocus && !searchInputBoxFocus"
+    },
+    {
+        "key": "n",
+        "command": "list.focusDown",
+        "when": "searchViewletFocus && !searchInputBoxFocus"
+    },
+    {
+        "key": "p",
+        "command": "list.focusUp",
+        "when": "searchViewletFocus && !searchInputBoxFocus"
+    },
+    {
+        "key": "a",
+        "command": "workbench.action.findInFiles",
+        "when": "searchViewletFocus && !searchInputBoxFocus"
+    },
 ]

@@ -148,3 +148,9 @@ rm -rf ~/.config/nvim \
 ~/.local/state/nvim \
 ~/.cache/nvim
 ```
+
+## Visual Studio Code
+
+Use [VSCode Neovim](https://marketplace.visualstudio.com/items/?itemName=asvetliakov.vscode-neovim) extension to support neovim.
+
+Use [lua/vscode_neovim](lua/vscode_neovim), [.vscode/settings.json](.vscode/settings.json), and [.vscode/keybindings.json](.vscode/keybindings.json) to make VSCode's setup as close to my original neovim config as possible.
