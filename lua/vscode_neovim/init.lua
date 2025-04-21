@@ -25,7 +25,8 @@ vim.keymap.set('n', '<leader>ff', function()
 end, { desc = 'Telescope find_files'})
 
 vim.keymap.set('n', '<leader>fg', function()
-  vscode.action('workbench.view.search', { })
+  vscode.action('workbench.action.findInFiles', { })
+  vscode.action('search.action.clearSearchResults', { })
 end, { desc = 'Telescope live_grep' })
 
 vim.keymap.set('n', '<leader>fb', function()

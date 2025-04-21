@@ -1,16 +1,19 @@
 {
-    "[lua]": {
-        "editor.defaultFormatter": "JohnnyMorganz.stylua"
-    },
-    "editor.lineNumbers": "relative",
     "multiCommand.commands": [
         {
-            "command": "extension.multiCommand.openFileAndCloseExplorer",
+            "command": "extension.multiCommand.openFileAndCloseSidebar",
             "sequence": [
                 "list.select",
                 "workbench.action.toggleSidebarVisibility"
             ]
-        }
+        },
+        {
+            "command": "extension.multiCommand.openSearch",
+            "sequence": [
+                "workbench.action.findInFiles",
+                "search.action.clearSearchResults"
+            ]
+        },
     ],
     "workbench.colorTheme": "GitHub Dark High Contrast",
     "workbench.iconTheme": "vscode-icons",

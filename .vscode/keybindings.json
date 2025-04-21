@@ -26,13 +26,8 @@
     },
     {
         "key": "enter",
-        "command": "extension.multiCommand.openFileAndCloseExplorer",
+        "command": "extension.multiCommand.openFileAndCloseSidebar",
         "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !explorerResourceReadonly && !inputFocus"
-    },
-    {
-        "key": "; f g",
-        "command": "workbench.action.findInFiles",
-        "when": "!inputFocus"
     },
     {
         "key": "; f f",
@@ -45,28 +40,28 @@
         "when": "!inputFocus"
     },
     {
-        "key": "ctrl+[",
-        "command": "search.focus.nextInputBox",
-        "when": "searchInputBoxFocus"
+        "key": "; f g",
+        "command": "extension.multiCommand.openSearch",
+        "when": "!inputFocus"
     },
     {
         "key": "ctrl+[",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "searchViewletFocus && !searchInputBoxFocus"
+        "when": "searchInputBoxFocus"
     },
     {
-        "key": "n",
-        "command": "list.focusDown",
-        "when": "searchViewletFocus && !searchInputBoxFocus"
+        "key": "ctrl+n",
+        "command": "search.action.focusSearchList",
+        "when": "searchInputBoxFocus"
     },
     {
-        "key": "p",
-        "command": "list.focusUp",
-        "when": "searchViewletFocus && !searchInputBoxFocus"
-    },
-    {
-        "key": "a",
+        "key": "ctrl+[",
         "command": "workbench.action.findInFiles",
+        "when": "searchViewletFocus && !searchInputBoxFocus"
+    },
+    {
+        "key": "enter",
+        "command": "extension.multiCommand.openFileAndCloseSidebar",
         "when": "searchViewletFocus && !searchInputBoxFocus"
     },
 ]
