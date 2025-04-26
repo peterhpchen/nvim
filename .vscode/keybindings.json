@@ -64,4 +64,36 @@
         "command": "extension.multiCommand.openFileAndCloseSidebar",
         "when": "searchViewletFocus && !searchInputBoxFocus"
     },
+
+    // git
+    {
+        "key": "; g c",
+        "command": "extension.multiCommand.openChanges",
+        "when": "!inputFocus"
+    },
+    {
+        "key": "; g g",
+        "command": "workbench.scm.history.focus",
+        "when": "!inputFocus"
+    },
+    {
+        "key": "; g g",
+        "command": "workbench.scm.history.focus",
+        "when": "focusedView === workbench.scm"
+    },
+    {
+        "key": "=",
+        "command": "extension.multiCommand.stageAndBackChanges",
+        "when": "focusedView === workbench.scm"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "extension.multiCommand.openNextAndBackSidebar",
+        "when": "focusedView === workbench.scm"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "extension.multiCommand.openPrevAndBackSidebar",
+        "when": "focusedView === workbench.scm"
+    }
 ]

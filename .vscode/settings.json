@@ -14,6 +14,40 @@
                 "search.action.clearSearchResults"
             ]
         },
+        {
+            "command": "extension.multiCommand.openNextAndBackSidebar",
+            "sequence": [
+                "list.focusDown",
+                "list.select",
+                "workbench.action.focusSideBar"
+            ],
+            "interval": 400
+        },
+        {
+            "command": "extension.multiCommand.openPrevAndBackSidebar",
+            "sequence": [
+                "list.focusUp",
+                "list.select",
+                "workbench.action.focusSideBar"
+            ],
+            "interval": 400
+        },
+        {
+            "command": "extension.multiCommand.openChanges",
+            "sequence": [
+                "workbench.scm.focus",
+                "list.collapseAll",
+                "list.focusLast",
+                "list.expand"
+            ]
+        },
+        {
+            "command": "extension.multiCommand.stageAndBackChanges",
+            "sequence": [
+                "git.stage",
+                "extension.multiCommand.openChanges"
+            ]
+        },
     ],
     "workbench.colorTheme": "GitHub Dark High Contrast",
     "workbench.iconTheme": "vscode-icons",

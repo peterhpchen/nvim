@@ -68,9 +68,16 @@ end, { desc = 'Close marker'})
 
 -- gitsigns.nvim
 vim.keymap.set('n', '[c', function()
-  vscode.action('workbench.action.editor.previousChange', { })
-end, { desc = 'Gitsigns prev_hunk'})
+  vscode.action('workbench.action.editor.previousChange', {})
+end, { desc = 'Gitsigns prev_hunk' })
 
 vim.keymap.set('n', ']c', function()
   vscode.action('workbench.action.editor.nextChange', { })
 end, { desc = 'Gitsigns next_hunk'})
+
+vim.keymap.set('n', '<leader>gc', function()
+  vscode.action('workbench.scm.focus', { })
+  vscode.action('list.collapseAll', { })
+  vscode.action('list.focusLast', { })
+  vscode.action('list.expand', { })
+end, { desc = 'Open git changes' })
