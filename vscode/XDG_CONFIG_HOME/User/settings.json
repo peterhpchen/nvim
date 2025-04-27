@@ -1,20 +1,6 @@
 {
     "multiCommand.commands": [
         {
-            "command": "extension.multiCommand.openFileAndCloseSidebar",
-            "sequence": [
-                "list.select",
-                "workbench.action.toggleSidebarVisibility"
-            ]
-        },
-        {
-            "command": "extension.multiCommand.openSearch",
-            "sequence": [
-                "workbench.action.findInFiles",
-                "search.action.clearSearchResults"
-            ]
-        },
-        {
             "command": "extension.multiCommand.openNextAndBackSidebar",
             "sequence": [
                 "list.focusDown",
@@ -39,13 +25,6 @@
                 "list.collapseAll",
                 "list.focusLast",
                 "list.expand"
-            ]
-        },
-        {
-            "command": "extension.multiCommand.stageAndBackChanges",
-            "sequence": [
-                "git.stage",
-                "extension.multiCommand.openChanges"
             ]
         },
     ],
